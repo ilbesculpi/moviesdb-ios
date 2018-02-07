@@ -166,6 +166,7 @@
 				625B6B31202B66D400D5C0FC /* AppDelegate.swift */,
 				625B6B70202B66D500D5C0FC /* Domain */,
 				625B6B61202B66D500D5C0FC /* UI */,
+				625B6B98202B7D2300D5C0FC /* Persistence */,
 				625B6B5F202B66D500D5C0FC /* Storyboards */,
 				625B6B68202B66D500D5C0FC /* Resources */,
 				625B6B3D202B66D400D5C0FC /* Info.plist */,
@@ -176,7 +177,7 @@
 		625B6B45202B66D500D5C0FC /* TheMovieDatabaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				625B6B94202B784800D5C0FC /* Domain */,
+				625B6B99202B7D4E00D5C0FC /* Persistence */,
 				625B6B46202B66D500D5C0FC /* TheMovieDatabaseTests.swift */,
 				625B6B48202B66D500D5C0FC /* Info.plist */,
 			);
@@ -257,7 +258,6 @@
 			children = (
 				625B6B82202B66D500D5C0FC /* Contracts */,
 				625B6B71202B66D500D5C0FC /* Entities */,
-				625B6B7D202B66D500D5C0FC /* Interactors */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -305,20 +305,28 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
-		625B6B94202B784800D5C0FC /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				625B6B95202B785300D5C0FC /* Interactors */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
 		625B6B95202B785300D5C0FC /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
 				625B6B96202B786D00D5C0FC /* MovieInteractorTests.swift */,
 			);
 			path = Interactors;
+			sourceTree = "<group>";
+		};
+		625B6B98202B7D2300D5C0FC /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				625B6B7D202B66D500D5C0FC /* Interactors */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		625B6B99202B7D4E00D5C0FC /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				625B6B95202B785300D5C0FC /* Interactors */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		B52E45BC02629BB8EC8B53C3 /* Frameworks */ = {
