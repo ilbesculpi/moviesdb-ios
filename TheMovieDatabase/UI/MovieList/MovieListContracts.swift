@@ -20,6 +20,6 @@ protocol MovieListViewContract: AnyObject {
 
 protocol MovieListPresenterContract: BasePresenterContract {
     
-    weak var view: HomePresenterContract! { get set }
+    weak var view: MovieListViewContract! { get set }
     
 }

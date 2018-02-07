@@ -32,6 +32,7 @@
 		625B6B8F202B778300D5C0FC /* MovieListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6B8E202B778300D5C0FC /* MovieListContracts.swift */; };
 		625B6B91202B779E00D5C0FC /* MovieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6B90202B779E00D5C0FC /* MovieListPresenter.swift */; };
 		625B6B93202B77F800D5C0FC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6B92202B77F800D5C0FC /* Movie.swift */; };
+		625B6B97202B786D00D5C0FC /* MovieInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6B96202B786D00D5C0FC /* MovieInteractorTests.swift */; };
 		6459B5BE68E296D8BF24BAFB /* Pods_TheMovieDatabaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D3A4CA439E1C7DF61046B1 /* Pods_TheMovieDatabaseTests.framework */; };
 		8EBB86FC88A250C62216753F /* Pods_TheMovieDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F6711251C0505F661D9958 /* Pods_TheMovieDatabase.framework */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		625B6B8E202B778300D5C0FC /* MovieListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListContracts.swift; sourceTree = "<group>"; };
 		625B6B90202B779E00D5C0FC /* MovieListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListPresenter.swift; sourceTree = "<group>"; };
 		625B6B92202B77F800D5C0FC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		625B6B96202B786D00D5C0FC /* MovieInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInteractorTests.swift; sourceTree = "<group>"; };
 		65A79B7CFF814497F0AE1B94 /* Pods-TheMovieDatabaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDatabaseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheMovieDatabaseUITests/Pods-TheMovieDatabaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		68F6711251C0505F661D9958 /* Pods_TheMovieDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8761F780FD1AAE1A05008CDE /* Pods-TheMovieDatabaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDatabaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheMovieDatabaseTests/Pods-TheMovieDatabaseTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		625B6B45202B66D500D5C0FC /* TheMovieDatabaseTests */ = {
 			isa = PBXGroup;
 			children = (
+				625B6B94202B784800D5C0FC /* Domain */,
 				625B6B46202B66D500D5C0FC /* TheMovieDatabaseTests.swift */,
 				625B6B48202B66D500D5C0FC /* Info.plist */,
 			);
@@ -300,6 +303,22 @@
 				625B6B8C202B6DE700D5C0FC /* RootViewController.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		625B6B94202B784800D5C0FC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				625B6B95202B785300D5C0FC /* Interactors */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		625B6B95202B785300D5C0FC /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				625B6B96202B786D00D5C0FC /* MovieInteractorTests.swift */,
+			);
+			path = Interactors;
 			sourceTree = "<group>";
 		};
 		B52E45BC02629BB8EC8B53C3 /* Frameworks */ = {
@@ -457,9 +476,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TheMovieDatabaseTests/Pods-TheMovieDatabaseTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -634,6 +658,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				625B6B47202B66D500D5C0FC /* TheMovieDatabaseTests.swift in Sources */,
+				625B6B97202B786D00D5C0FC /* MovieInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
