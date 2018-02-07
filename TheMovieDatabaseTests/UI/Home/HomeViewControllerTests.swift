@@ -7,19 +7,107 @@
 //
 
 import XCTest
+import UIKit
+import Cuckoo
 @testable import TheMovieDatabase
 
 class HomeViewControllerTests: XCTestCase {
     
-    var controller: HomeViewController!
+    var viewController: HomeViewController!
+    var presenterMock: MockHomePresenter!
         
     override func setUp() {
         super.setUp();
-        controller = HomeViewController();
+        viewController = loadViewController();
+        presenterMock = MockHomePresenter();
+        viewController.presenter = presenterMock;
+    }
+    
+    private func loadViewController() -> HomeViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil);
+        let viewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController;
+        return viewController;
     }
     
     override func tearDown() {
         super.tearDown();
     }
     
+    func testShouldCallViewReady() {
+        
+        // mock presenter interactions
+        stub(presenterMock) { (mock) in
+            when(mock).viewDidLoad().thenDoNothing();
+        }
+        
+        // trigger view load
+        _ = viewController.view;
+        viewController.viewDidAppear(false);
+        
+        // view controller should call presenter `viewReady()`
+        verify(presenterMock).viewDidLoad();
+    }
+    
+    func testShouldDisplayCategoryTitle() {
+        
+        // mock presenter interactions
+        stub(presenterMock) { (mock) in
+            when(mock).viewDidLoad().thenDoNothing();
+        }
+        
+        // trigger view load
+        _ = viewController.view;
+        viewController.viewDidAppear(false);
+        
+        viewController.display(section: .movies);
+        XCTAssertEqual(viewController.title, "Movies");
+        
+        viewController.display(section: .series);
+        XCTAssertEqual(viewController.title, "Series");
+    }
+    
+    func testShouldDisplayEmptyCategories() {
+        
+        // mock presenter interactions
+        stub(presenterMock) { (mock) in
+            when(mock).viewDidLoad().thenDoNothing();
+        }
+        
+        // trigger view load
+        _ = viewController.view;
+        viewController.viewDidAppear(false);
+        
+        viewController.display(categories: []);
+        
+        let tableView = viewController.tableView!;
+        XCTAssertEqual(0, viewController.categories.count);
+        XCTAssertEqual(0, viewController.tableView(tableView, numberOfRowsInSection: 0));
+        XCTAssertEqual([], viewController.categories, "`viewController` categories should be an empty array");
+    }
+    
+    func testShouldDisplayCategories() {
+        
+        // mock presenter interactions
+        stub(presenterMock) { (mock) in
+            when(mock).viewDidLoad().thenDoNothing();
+        }
+        
+        // trigger view load
+        _ = viewController.view;
+        viewController.viewDidAppear(false);
+        
+        let categories: [MainCategory] = [.popular, .topRated, .upcoming];
+        viewController.display(categories: categories);
+        
+        let tableView = viewController.tableView!
+        XCTAssertEqual(3, viewController.categories.count);
+        XCTAssertEqual(3, viewController.tableView(tableView, numberOfRowsInSection: 0));
+        XCTAssertEqual([.popular, .topRated, .upcoming], viewController.categories, "`viewController` categories should match the list provided");
+    }
+    
 }
+
+
+
+
+

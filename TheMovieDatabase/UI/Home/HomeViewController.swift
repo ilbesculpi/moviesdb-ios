@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class HomeViewController: BaseViewController, HomeViewContract {
     
@@ -15,8 +17,8 @@ class HomeViewController: BaseViewController, HomeViewContract {
     
     var router: HomeRouter?
     
-    // List of categories to show
-    fileprivate var categories: [MainCategory] = [];
+    // List of categories to display
+    var categories: [MainCategory] = [];
     
     // tableView reference
     @IBOutlet weak var tableView: UITableView!

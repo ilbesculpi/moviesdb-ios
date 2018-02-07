@@ -36,6 +36,11 @@
 		625B6B9F202B7DE700D5C0FC /* MovieListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6B9E202B7DE700D5C0FC /* MovieListPresenterTests.swift */; };
 		625B6BA2202B7E0400D5C0FC /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BA1202B7E0400D5C0FC /* HomeViewControllerTests.swift */; };
 		625B6BA4202B7E1100D5C0FC /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BA3202B7E1100D5C0FC /* HomePresenterTests.swift */; };
+		625B6BAC202B9F7900D5C0FC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BA7202B9F7900D5C0FC /* BaseViewController.swift */; };
+		625B6BAD202B9F7900D5C0FC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BA8202B9F7900D5C0FC /* HomePresenter.swift */; };
+		625B6BAE202B9F7900D5C0FC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BA9202B9F7900D5C0FC /* HomeViewController.swift */; };
+		625B6BAF202B9F7900D5C0FC /* MovieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BAA202B9F7900D5C0FC /* MovieListPresenter.swift */; };
+		625B6BB0202B9F7900D5C0FC /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BAB202B9F7900D5C0FC /* MovieListViewController.swift */; };
 		6459B5BE68E296D8BF24BAFB /* Pods_TheMovieDatabaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D3A4CA439E1C7DF61046B1 /* Pods_TheMovieDatabaseTests.framework */; };
 		8EBB86FC88A250C62216753F /* Pods_TheMovieDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F6711251C0505F661D9958 /* Pods_TheMovieDatabase.framework */; };
 /* End PBXBuildFile section */
@@ -95,6 +100,11 @@
 		625B6B9E202B7DE700D5C0FC /* MovieListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListPresenterTests.swift; sourceTree = "<group>"; };
 		625B6BA1202B7E0400D5C0FC /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		625B6BA3202B7E1100D5C0FC /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		625B6BA7202B9F7900D5C0FC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		625B6BA8202B9F7900D5C0FC /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		625B6BA9202B9F7900D5C0FC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		625B6BAA202B9F7900D5C0FC /* MovieListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListPresenter.swift; sourceTree = "<group>"; };
+		625B6BAB202B9F7900D5C0FC /* MovieListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		65A79B7CFF814497F0AE1B94 /* Pods-TheMovieDatabaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDatabaseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheMovieDatabaseUITests/Pods-TheMovieDatabaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		68F6711251C0505F661D9958 /* Pods_TheMovieDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8761F780FD1AAE1A05008CDE /* Pods-TheMovieDatabaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDatabaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheMovieDatabaseTests/Pods-TheMovieDatabaseTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +193,7 @@
 		625B6B45202B66D500D5C0FC /* TheMovieDatabaseTests */ = {
 			isa = PBXGroup;
 			children = (
+				625B6BA6202B9F7900D5C0FC /* Mocks */,
 				625B6B9A202B7DAE00D5C0FC /* UI */,
 				625B6B99202B7D4E00D5C0FC /* Persistence */,
 				625B6B48202B66D500D5C0FC /* Info.plist */,
@@ -362,6 +373,18 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		625B6BA6202B9F7900D5C0FC /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				625B6BA7202B9F7900D5C0FC /* BaseViewController.swift */,
+				625B6BA8202B9F7900D5C0FC /* HomePresenter.swift */,
+				625B6BA9202B9F7900D5C0FC /* HomeViewController.swift */,
+				625B6BAA202B9F7900D5C0FC /* MovieListPresenter.swift */,
+				625B6BAB202B9F7900D5C0FC /* MovieListViewController.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		B52E45BC02629BB8EC8B53C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +428,7 @@
 				625B6B40202B66D500D5C0FC /* Resources */,
 				00FB396A7C072D4A1B75E481 /* [CP] Embed Pods Frameworks */,
 				D143A5C22378431D08585872 /* [CP] Copy Pods Resources */,
+				625B6BA5202B7F3E00D5C0FC /* Generate Cuckoo Mocks */,
 			);
 			buildRules = (
 			);
@@ -547,6 +571,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheMovieDatabaseUITests/Pods-TheMovieDatabaseUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		625B6BA5202B7F3E00D5C0FC /* Generate Cuckoo Mocks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Cuckoo Mocks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/TheMovieDatabaseTests/Mocks\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n\nSRC_UI=\"$INPUT_DIR/TheMovieDatabase/UI\"\nSRC_PERSISTENCE=\"$INPUT_DIR/TheMovieDatabase/Persistence\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$SRC_UI/Common/BaseViewController.swift\" \\\n\"$SRC_UI/Home/HomeViewController.swift\" \\\n\"$SRC_UI/Home/HomePresenter.swift\" \\\n\"$SRC_UI/MovieList/MovieListViewController.swift\" \\\n\"$SRC_UI/MovieList/MovieListPresenter.swift\"\n";
 		};
 		6380764040F7E31E2B1ECBC5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -700,11 +738,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				625B6BAD202B9F7900D5C0FC /* HomePresenter.swift in Sources */,
+				625B6BB0202B9F7900D5C0FC /* MovieListViewController.swift in Sources */,
+				625B6BAF202B9F7900D5C0FC /* MovieListPresenter.swift in Sources */,
 				625B6B9F202B7DE700D5C0FC /* MovieListPresenterTests.swift in Sources */,
 				625B6B97202B786D00D5C0FC /* MovieInteractorTests.swift in Sources */,
+				625B6BAE202B9F7900D5C0FC /* HomeViewController.swift in Sources */,
 				625B6B9D202B7DD900D5C0FC /* MovieListViewControllerTests.swift in Sources */,
 				625B6BA4202B7E1100D5C0FC /* HomePresenterTests.swift in Sources */,
 				625B6BA2202B7E0400D5C0FC /* HomeViewControllerTests.swift in Sources */,
+				625B6BAC202B9F7900D5C0FC /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
