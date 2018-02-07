@@ -14,6 +14,7 @@ target 'TheMovieDatabase' do
     # Pods for testing
     pod 'RxSwift',    '~> 4.0'
     pod 'RxCocoa',    '~> 4.0'
+    pod 'Cuckoo',     '~> 0.10'
   end
 
   target 'TheMovieDatabaseUITests' do
