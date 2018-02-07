@@ -13,10 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        return true
+        
+        // Configure root controllers
+        configureRootControllers();
+        
+        return true;
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -41,6 +44,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // MARK: - Custom Helpers
+    
+    var moviesViewController: HomeViewController {
+        get {
+            let tabBarController = window?.rootViewController as! UITabBarController;
+            let navController = tabBarController.viewControllers![0] as! UINavigationController;
+            let moviesController = navController.viewControllers.first as! HomeViewController;
+            return moviesController;
+        }
+    };
+    
+    var seriesViewController: HomeViewController {
+        get {
+            let tabBarController = window?.rootViewController as! UITabBarController;
+            let navController = tabBarController.viewControllers![1] as! UINavigationController;
+            let seriesController = navController.viewControllers.first as! HomeViewController;
+            return seriesController;
+        }
+    };
+    
+    private func configureRootControllers() {
+        HomeConfigurator.configure(moviesViewController, section: .movies);
+        HomeConfigurator.configure(seriesViewController, section: .series);
+    }
 
 }
 

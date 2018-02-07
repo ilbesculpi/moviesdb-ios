@@ -29,19 +29,13 @@
                                 <rect key="frame" x="0.0" y="120" width="320" height="399"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="80q-4N-Kt9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainCategoryCell" id="80q-4N-Kt9" customClass="MainCategoryCell" customModule="TheMovieDatabase" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="80q-4N-Kt9" id="f1O-3p-Zpv">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgr-Fa-Xjf">
-                                                    <rect key="frame" x="48" y="12" width="67" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PopularIcon" translatesAutoresizingMaskIntoConstraints="NO" id="gcg-6s-OPy">
                                                     <rect key="frame" x="8" y="6" width="32" height="32"/>
                                                     <constraints>
@@ -49,6 +43,12 @@
                                                         <constraint firstAttribute="height" constant="32" id="t1q-wP-qq8"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgr-Fa-Xjf">
+                                                    <rect key="frame" x="48" y="12" width="67" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="gcg-6s-OPy" firstAttribute="centerY" secondItem="f1O-3p-Zpv" secondAttribute="centerY" id="8aR-Yz-owZ"/>
@@ -57,8 +57,16 @@
                                                 <constraint firstItem="tgr-Fa-Xjf" firstAttribute="centerY" secondItem="f1O-3p-Zpv" secondAttribute="centerY" id="PkG-D4-qFn"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="iconView" destination="gcg-6s-OPy" id="L8Q-o1-MBr"/>
+                                            <outlet property="labelTitle" destination="tgr-Fa-Xjf" id="N9I-9c-10b"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VLG-0D-Yws" id="3La-w4-RCb"/>
+                                    <outlet property="delegate" destination="VLG-0D-Yws" id="2ut-Wa-anQ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,7 +84,8 @@
                     <navigationItem key="navigationItem" title="Movies" id="PgU-RB-QYi"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="QM8-Rw-flX" id="4MO-Cl-029"/>
-                        <segue destination="Wez-vb-zRN" kind="show" id="ulT-nK-DSJ"/>
+                        <outlet property="tableView" destination="HdG-kL-Eux" id="8Sd-zA-lga"/>
+                        <segue destination="Wez-vb-zRN" kind="show" identifier="sw_movie_list" id="ulT-nK-DSJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqf-YH-OAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -186,6 +195,6 @@
         <image name="PopularIcon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HtS-dy-yg3"/>
+        <segue reference="hcK-ew-8OR"/>
     </inferredMetricsTieBreakers>
 </document>
