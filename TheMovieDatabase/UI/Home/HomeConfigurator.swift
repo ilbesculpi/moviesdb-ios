@@ -12,10 +12,15 @@ class HomeConfigurator {
     
     class func configure(_ view: HomeViewController, section: MainSection) {
         let presenter = HomePresenter();
-        view.presenter = presenter;
-        view.section = section;
         presenter.view = view;
+        presenter.section = section;
         presenter.interactor = MovieInteractor();
+        
+        let router = HomeRouter();
+        router.view = view;
+        
+        view.presenter = presenter;
+        view.router = router;
     }
     
 }

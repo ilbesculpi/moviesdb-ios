@@ -8,9 +8,15 @@
 
 import Foundation
 
-enum MainSection {
+enum MainSection: String {
     
-    case movies
-    case series
+    case movies = "Movies";
+    case series = "Series";
+    
+    var title: String {
+        get {
+            return rawValue;
+        }
+    };
     
 }

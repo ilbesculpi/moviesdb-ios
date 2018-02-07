@@ -13,7 +13,8 @@ protocol HomeViewContract: AnyObject {
     
     var presenter: HomePresenterContract? { get set };
     
-    func displayCategories(_ categories: [MainCategory]);
+    func display(categories: [MainCategory]);
+    func display(section: MainSection);
     
 }
 

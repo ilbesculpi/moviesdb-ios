@@ -15,8 +15,6 @@ class HomeViewController: BaseViewController, HomeViewContract {
     
     var router: HomeRouter?
     
-    var section: MainSection!
-    
     // List of categories to show
     fileprivate var categories: [MainCategory] = [];
     
@@ -32,13 +30,18 @@ class HomeViewController: BaseViewController, HomeViewContract {
         router?.prepare(for: segue);
     }
     
-    func displayCategories(_ categories: [MainCategory]) {
+    func display(categories: [MainCategory]) {
         self.categories = categories;
         self.tableView.reloadData();
     }
     
+    func display(section: MainSection) {
+        self.title = section.title;
+    }
+    
     deinit {
         presenter = nil;
+        router = nil;
     }
 
 }
@@ -67,7 +70,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let category = categories[indexPath.row];
+        router?.navigateToMovieList(category: category);
     }
     
 }
