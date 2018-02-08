@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: TheMovieDatabase/UI/Home/HomeViewController.swift at 2018-02-08 03:49:36 +0000
+// MARK: - Mocks generated from file: TheMovieDatabase/UI/Home/HomeViewController.swift at 2018-02-08 04:41:42 +0000
 
 //
 //  HomeViewController.swift
@@ -73,18 +73,6 @@ class MockHomeViewController: HomeViewController, Cuckoo.Mock {
         
         set {
             cuckoo_manager.setter("tableView", value: newValue, original: observed != nil ? { self.observed?.tableView = $0 } : nil)
-        }
-        
-    }
-    
-    // ["name": "disposeBag", "accesibility": "", "@type": "InstanceVariable", "type": "DisposeBag", "isReadOnly": false]
-     override var disposeBag: DisposeBag {
-        get {
-            return cuckoo_manager.getter("disposeBag", original: observed.map { o in return { () -> DisposeBag in o.disposeBag }})
-        }
-        
-        set {
-            cuckoo_manager.setter("disposeBag", value: newValue, original: observed != nil ? { self.observed?.disposeBag = $0 } : nil)
         }
         
     }
@@ -173,10 +161,6 @@ class MockHomeViewController: HomeViewController, Cuckoo.Mock {
             return .init(manager: cuckoo_manager, name: "tableView")
         }
         
-        var disposeBag: Cuckoo.ToBeStubbedProperty<DisposeBag> {
-            return .init(manager: cuckoo_manager, name: "disposeBag")
-        }
-        
         
         func viewDidLoad() -> Cuckoo.StubNoReturnFunction<()> {
             let matchers: [Cuckoo.ParameterMatcher<Void>] = []
@@ -227,10 +211,6 @@ class MockHomeViewController: HomeViewController, Cuckoo.Mock {
         
         var tableView: Cuckoo.VerifyProperty<UITableView?> {
             return .init(manager: cuckoo_manager, name: "tableView", callMatcher: callMatcher, sourceLocation: sourceLocation)
-        }
-        
-        var disposeBag: Cuckoo.VerifyProperty<DisposeBag> {
-            return .init(manager: cuckoo_manager, name: "disposeBag", callMatcher: callMatcher, sourceLocation: sourceLocation)
         }
         
 
@@ -296,15 +276,6 @@ class MockHomeViewController: HomeViewController, Cuckoo.Mock {
      override var tableView: UITableView! {
         get {
             return DefaultValueRegistry.defaultValue(for: (UITableView!).self)
-        }
-        
-        set { }
-        
-    }
-    
-     override var disposeBag: DisposeBag {
-        get {
-            return DefaultValueRegistry.defaultValue(for: (DisposeBag).self)
         }
         
         set { }

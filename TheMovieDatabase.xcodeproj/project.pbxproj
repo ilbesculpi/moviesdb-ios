@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		323DF9AD85608CAD4399470F /* Pods_TheMovieDatabaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD84471C31A15E5C47BC271 /* Pods_TheMovieDatabaseUITests.framework */; };
+		624F0844202C03E400715BED /* MovieInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F0843202C03E300715BED /* MovieInteractor.swift */; };
 		625B6B32202B66D400D5C0FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6B31202B66D400D5C0FC /* AppDelegate.swift */; };
 		625B6B37202B66D400D5C0FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625B6B35202B66D400D5C0FC /* Main.storyboard */; };
 		625B6B39202B66D400D5C0FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 625B6B38202B66D400D5C0FC /* Assets.xcassets */; };
@@ -36,7 +37,6 @@
 		625B6B9F202B7DE700D5C0FC /* MovieListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6B9E202B7DE700D5C0FC /* MovieListPresenterTests.swift */; };
 		625B6BA2202B7E0400D5C0FC /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BA1202B7E0400D5C0FC /* HomeViewControllerTests.swift */; };
 		625B6BA4202B7E1100D5C0FC /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BA3202B7E1100D5C0FC /* HomePresenterTests.swift */; };
-		625B6BAC202B9F7900D5C0FC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BA7202B9F7900D5C0FC /* BaseViewController.swift */; };
 		625B6BAD202B9F7900D5C0FC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BA8202B9F7900D5C0FC /* HomePresenter.swift */; };
 		625B6BAE202B9F7900D5C0FC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BA9202B9F7900D5C0FC /* HomeViewController.swift */; };
 		625B6BAF202B9F7900D5C0FC /* MovieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BAA202B9F7900D5C0FC /* MovieListPresenter.swift */; };
@@ -66,6 +66,7 @@
 		1DD84471C31A15E5C47BC271 /* Pods_TheMovieDatabaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDatabaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48BAE161F0ADCF720F00AA3F /* Pods-TheMovieDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDatabase.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheMovieDatabase/Pods-TheMovieDatabase.release.xcconfig"; sourceTree = "<group>"; };
 		53D3A4CA439E1C7DF61046B1 /* Pods_TheMovieDatabaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDatabaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		624F0843202C03E300715BED /* MovieInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInteractor.swift; sourceTree = "<group>"; };
 		625B6B2E202B66D400D5C0FC /* TheMovieDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		625B6B31202B66D400D5C0FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		625B6B36202B66D400D5C0FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		625B6B9E202B7DE700D5C0FC /* MovieListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListPresenterTests.swift; sourceTree = "<group>"; };
 		625B6BA1202B7E0400D5C0FC /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		625B6BA3202B7E1100D5C0FC /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
-		625B6BA7202B9F7900D5C0FC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		625B6BA8202B9F7900D5C0FC /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		625B6BA9202B9F7900D5C0FC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		625B6BAA202B9F7900D5C0FC /* MovieListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListPresenter.swift; sourceTree = "<group>"; };
@@ -376,7 +376,7 @@
 		625B6BA6202B9F7900D5C0FC /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				625B6BA7202B9F7900D5C0FC /* BaseViewController.swift */,
+				624F0843202C03E300715BED /* MovieInteractor.swift */,
 				625B6BA8202B9F7900D5C0FC /* HomePresenter.swift */,
 				625B6BA9202B9F7900D5C0FC /* HomeViewController.swift */,
 				625B6BAA202B9F7900D5C0FC /* MovieListPresenter.swift */,
@@ -584,7 +584,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/TheMovieDatabaseTests/Mocks\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n\nSRC_UI=\"$INPUT_DIR/TheMovieDatabase/UI\"\nSRC_PERSISTENCE=\"$INPUT_DIR/TheMovieDatabase/Persistence\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$SRC_UI/Common/BaseViewController.swift\" \\\n\"$SRC_UI/Home/HomeViewController.swift\" \\\n\"$SRC_UI/Home/HomePresenter.swift\" \\\n\"$SRC_UI/MovieList/MovieListViewController.swift\" \\\n\"$SRC_UI/MovieList/MovieListPresenter.swift\"\n";
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/TheMovieDatabaseTests/Mocks\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n\nSRC_UI=\"$INPUT_DIR/TheMovieDatabase/UI\"\nSRC_PERSISTENCE=\"$INPUT_DIR/TheMovieDatabase/Persistence\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$SRC_UI/Home/HomeViewController.swift\" \\\n\"$SRC_UI/Home/HomePresenter.swift\" \\\n\"$SRC_UI/MovieList/MovieListViewController.swift\" \\\n\"$SRC_UI/MovieList/MovieListPresenter.swift\" \\\n\"$SRC_PERSISTENCE/Interactors/MovieInteractor.swift\"\n";
 		};
 		6380764040F7E31E2B1ECBC5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -743,11 +743,11 @@
 				625B6BAF202B9F7900D5C0FC /* MovieListPresenter.swift in Sources */,
 				625B6B9F202B7DE700D5C0FC /* MovieListPresenterTests.swift in Sources */,
 				625B6B97202B786D00D5C0FC /* MovieInteractorTests.swift in Sources */,
+				624F0844202C03E400715BED /* MovieInteractor.swift in Sources */,
 				625B6BAE202B9F7900D5C0FC /* HomeViewController.swift in Sources */,
 				625B6B9D202B7DD900D5C0FC /* MovieListViewControllerTests.swift in Sources */,
 				625B6BA4202B7E1100D5C0FC /* HomePresenterTests.swift in Sources */,
 				625B6BA2202B7E0400D5C0FC /* HomeViewControllerTests.swift in Sources */,
-				625B6BAC202B9F7900D5C0FC /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

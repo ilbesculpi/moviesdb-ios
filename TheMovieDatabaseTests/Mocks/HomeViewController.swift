@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: TheMovieDatabase/UI/MovieList/MovieListPresenter.swift at 2018-02-08 03:49:36 +0000
+// MARK: - Mocks generated from file: TheMovieDatabase/UI/MovieList/MovieListPresenter.swift at 2018-02-08 04:41:42 +0000
 
 //
 //  MovieListPresenter.swift

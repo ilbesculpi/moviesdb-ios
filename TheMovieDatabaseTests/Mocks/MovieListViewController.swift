@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: TheMovieDatabase/UI/MovieList/MovieListViewController.swift at 2018-02-08 03:49:36 +0000
+// MARK: - Mocks generated from file: TheMovieDatabase/UI/MovieList/MovieListViewController.swift at 2018-02-08 04:41:42 +0000
 
 //
 //  MovieListViewController.swift
@@ -29,18 +29,6 @@ class MockMovieListViewController: MovieListViewController, Cuckoo.Mock {
     }
 
     
-    // ["name": "disposeBag", "accesibility": "", "@type": "InstanceVariable", "type": "DisposeBag", "isReadOnly": false]
-     override var disposeBag: DisposeBag {
-        get {
-            return cuckoo_manager.getter("disposeBag", original: observed.map { o in return { () -> DisposeBag in o.disposeBag }})
-        }
-        
-        set {
-            cuckoo_manager.setter("disposeBag", value: newValue, original: observed != nil ? { self.observed?.disposeBag = $0 } : nil)
-        }
-        
-    }
-    
 
     
 
@@ -67,10 +55,6 @@ class MockMovieListViewController: MovieListViewController, Cuckoo.Mock {
             self.cuckoo_manager = manager
         }
         
-        var disposeBag: Cuckoo.ToBeStubbedProperty<DisposeBag> {
-            return .init(manager: cuckoo_manager, name: "disposeBag")
-        }
-        
         
         func viewDidLoad() -> Cuckoo.StubNoReturnFunction<()> {
             let matchers: [Cuckoo.ParameterMatcher<Void>] = []
@@ -92,10 +76,6 @@ class MockMovieListViewController: MovieListViewController, Cuckoo.Mock {
         }
 
         
-        var disposeBag: Cuckoo.VerifyProperty<DisposeBag> {
-            return .init(manager: cuckoo_manager, name: "disposeBag", callMatcher: callMatcher, sourceLocation: sourceLocation)
-        }
-        
 
         
         @discardableResult
@@ -110,15 +90,6 @@ class MockMovieListViewController: MovieListViewController, Cuckoo.Mock {
 }
 
  class MovieListViewControllerStub: MovieListViewController {
-    
-     override var disposeBag: DisposeBag {
-        get {
-            return DefaultValueRegistry.defaultValue(for: (DisposeBag).self)
-        }
-        
-        set { }
-        
-    }
     
 
     
