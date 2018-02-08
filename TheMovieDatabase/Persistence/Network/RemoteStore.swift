@@ -21,8 +21,7 @@ class RemoteStore: RemoteStoreContract {
         return "\(baseUrl)/\(path)?api_key=\(apiKey)&language=\(language)&page=\(page)";
     }
     
-    func fetchPopularMovies(page: Int, language: String) -> Observable<[Movie]> {
-        let endPointUrl: String = endPoint("movie/popular", page: page, language: language);
+    func fetchMovies(_ endPointUrl: String) -> Observable<[Movie]> {
         return RxAlamofire.requestJSON(.get, endPointUrl)
             .map({ (response, json) -> [Movie] in
                 if let dict = json as? [String : AnyObject] {
@@ -35,12 +34,28 @@ class RemoteStore: RemoteStoreContract {
             });
     }
     
-    func fetchTopRatedMovies(page: Int, language: String) -> Observable<[Movie]> {
-        return Observable.empty();
+    /**
+     * Fetch a list of popular movies from the themoviedb.org API.
+     */
+    func fetchPopularMovies(page: Int, language: String) -> Observable<[Movie]> {
+        let endPointUrl: String = endPoint("movie/popular", page: page, language: language);
+        return fetchMovies(endPointUrl);
     }
     
+    /**
+     * Fetch a list of top rated movies from the themoviedb.org API.
+     */
+    func fetchTopRatedMovies(page: Int, language: String) -> Observable<[Movie]> {
+        let endPointUrl: String = endPoint("movie/top_rated", page: page, language: language);
+        return fetchMovies(endPointUrl);
+    }
+    
+    /**
+     * Fetch a list of upcoming movies from the themoviedb.org API.
+     */
     func fetchUpcomingMovies(page: Int, language: String) -> Observable<[Movie]> {
-        return Observable.empty();
+        let endPointUrl: String = endPoint("movie/upcoming", page: page, language: language);
+        return fetchMovies(endPointUrl);
     }
     
 }

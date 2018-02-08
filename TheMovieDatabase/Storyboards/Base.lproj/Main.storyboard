@@ -109,21 +109,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kM8-Uy-KDd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="108" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kM8-Uy-KDd">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieCell" id="9TZ-v0-4lG" customClass="MovieCell" customModule="TheMovieDatabase" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="120"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9TZ-v0-4lG" id="pTK-zu-3vS">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="107.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="asz-ll-PxW">
-                                                    <rect key="frame" x="8" y="8" width="64" height="64"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="asz-ll-PxW">
+                                                    <rect key="frame" x="8" y="8" width="64" height="91.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="64" id="avz-Sn-tcK"/>
                                                         <constraint firstAttribute="width" constant="64" id="hTT-cR-lmM"/>
                                                     </constraints>
                                                 </imageView>
@@ -147,6 +146,7 @@
                                                 <constraint firstItem="hOt-ph-bWE" firstAttribute="trailing" secondItem="3Df-8G-ndh" secondAttribute="trailing" id="MAD-fd-HBJ"/>
                                                 <constraint firstItem="3Df-8G-ndh" firstAttribute="top" secondItem="asz-ll-PxW" secondAttribute="top" id="PS6-WE-6sX"/>
                                                 <constraint firstItem="asz-ll-PxW" firstAttribute="top" secondItem="pTK-zu-3vS" secondAttribute="top" constant="8" id="com-xD-PWY"/>
+                                                <constraint firstAttribute="bottom" secondItem="asz-ll-PxW" secondAttribute="bottom" constant="8" id="lCh-Yh-P0i"/>
                                                 <constraint firstItem="hOt-ph-bWE" firstAttribute="top" secondItem="3Df-8G-ndh" secondAttribute="bottom" constant="8" id="mx4-rz-UBW"/>
                                                 <constraint firstItem="hOt-ph-bWE" firstAttribute="leading" secondItem="3Df-8G-ndh" secondAttribute="leading" id="wcw-vx-uQ5"/>
                                             </constraints>
