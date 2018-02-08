@@ -103,6 +103,23 @@ class HomeViewControllerTests: XCTestCase {
         XCTAssertEqual(3, viewController.categories.count);
         XCTAssertEqual(3, viewController.tableView(tableView, numberOfRowsInSection: 0));
         XCTAssertEqual([.popular, .topRated, .upcoming], viewController.categories, "`viewController` categories should match the list provided");
+        
+        // assert cells
+        var indexPath = IndexPath(row: 0, section: 0);
+        var cell = tableView.cellForRow(at: indexPath) as? MainCategoryCell;
+        XCTAssertNotNil(cell);
+        XCTAssertEqual("Popular", cell?.labelTitle.text);
+        
+        indexPath = IndexPath(row: 1, section: 0);
+        cell = tableView.cellForRow(at: indexPath) as? MainCategoryCell;
+        XCTAssertNotNil(cell);
+        XCTAssertEqual("Top Rated", cell?.labelTitle.text);
+        
+        indexPath = IndexPath(row: 2, section: 0);
+        cell = tableView.cellForRow(at: indexPath) as? MainCategoryCell;
+        XCTAssertNotNil(cell);
+        XCTAssertEqual("Upcoming", cell?.labelTitle.text);
+        
     }
     
 }

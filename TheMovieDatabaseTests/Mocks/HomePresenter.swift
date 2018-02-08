@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: TheMovieDatabase/UI/Home/HomeViewController.swift at 2018-02-07 21:27:51 +0000
+// MARK: - Mocks generated from file: TheMovieDatabase/UI/Home/HomeViewController.swift at 2018-02-08 03:49:36 +0000
 
 //
 //  HomeViewController.swift
