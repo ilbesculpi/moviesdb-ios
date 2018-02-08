@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class MovieCell: UITableViewCell {
     
@@ -20,6 +21,13 @@ class MovieCell: UITableViewCell {
     
     func display(_ movie: Movie) {
         labelTitle.text = movie.title;
+        if let posterUrl = movie.posterUrl {
+            let pictureUrl = URL(string: posterUrl)!
+            let data = try! Data(contentsOf: pictureUrl);
+            let image = UIImage(data: data)!
+            pictureView.image = image;
+            image.af_inflate();
+        }
     }
 
 }

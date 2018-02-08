@@ -35,6 +35,10 @@ class Movie: Mappable {
         poster_path <- map["poster_path"]
         adult <- map["adult"]
         overview <- map["overview"]
+        original_title <- map["original_title"]
+        title <- map["title"]
+        backdrop_path <- map["backdrop_path"]
+        popularity <- map["popularity"]
     }
     
     func mapping(map: Map) {
@@ -43,5 +47,23 @@ class Movie: Mappable {
         adult <- map["adult"]
         overview <- map["overview"]
     }
+    
+    var posterUrl: String? {
+        get {
+            if let path = self.poster_path {
+                return "https://image.tmdb.org/t/p/w600_and_h900_bestv2\(path)";
+            }
+            return nil;
+        }
+    };
+    
+    var backdropUrl: String? {
+        get {
+            if let path = self.backdrop_path {
+                return "https://image.tmdb.org/t/p/w600_and_h900_bestv2\(path)";
+            }
+            return nil;
+        }
+    };
     
 }

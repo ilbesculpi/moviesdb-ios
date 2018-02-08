@@ -24,7 +24,7 @@ class MovieListViewController: BaseViewController, MovieListViewContract {
     }
     
     func display(category: MainCategory) {
-        self.title = "\(category) Movies";
+        self.title = "\(category.title) Movies";
     }
     
     func display(movies: [Movie]) {

@@ -22,7 +22,7 @@ class RemoteStore: RemoteStoreContract {
     }
     
     func fetchPopularMovies(page: Int, language: String) -> Observable<[Movie]> {
-        let endPointUrl: String = endPoint("/movie/popular", page: page, language: language);
+        let endPointUrl: String = endPoint("movie/popular", page: page, language: language);
         return RxAlamofire.requestJSON(.get, endPointUrl)
             .map({ (response, json) -> [Movie] in
                 if let dict = json as? [String : AnyObject] {
