@@ -273,7 +273,6 @@
 		625B6B70202B66D500D5C0FC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				625B6B82202B66D500D5C0FC /* Contracts */,
 				625B6B71202B66D500D5C0FC /* Entities */,
 			);
 			path = Domain;
@@ -333,6 +332,7 @@
 		625B6B98202B7D2300D5C0FC /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				625B6B82202B66D500D5C0FC /* Contracts */,
 				625B6B7D202B66D500D5C0FC /* Interactors */,
 			);
 			path = Persistence;

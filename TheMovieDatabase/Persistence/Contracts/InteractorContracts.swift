@@ -13,5 +13,6 @@ import RxSwift
 protocol MovieInteractorContract {
     
     func fetchHomeCategories() -> Observable<[MainCategory]>;
+    func fetchMovies(for section: MainSection, category: MainCategory) -> Observable<[Movie]>;
     
 }
