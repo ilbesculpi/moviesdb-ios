@@ -11,6 +11,9 @@ import RxCocoa
 import RxSwift
 
 class MovieInteractor: MovieInteractorContract {
+    
+    var remoteStore: RemoteStoreContract!
+    var language: String = "en_US";
 
     /**
      * Fetch a list of categories to display on the Home Screen.
@@ -21,6 +24,17 @@ class MovieInteractor: MovieInteractorContract {
             MainCategory.topRated,
             MainCategory.upcoming
         ]);
+    }
+    
+    func fetchMovies(for category: MainCategory, page: Int) -> Observable<[Movie]> {
+        switch( category ) {
+            case .popular:
+                return remoteStore.fetchPopularMovies(page: page, language: language);
+            case .topRated:
+                return remoteStore.fetchPopularMovies(page: page, language: language);
+            case .upcoming:
+                return remoteStore.fetchUpcomingMovies(page: page, language: language);
+        }
     }
     
 }

@@ -12,17 +12,18 @@ class HomeRouter: NSObject {
     
     weak var view: HomeViewController?
     var section: MainSection?
-    private var selectedCategory: MainCategory?
+    private var category: MainCategory?
 
     func navigateToMovieList(category: MainCategory) {
+        self.category = category;
         view?.performSegue(withIdentifier: "sw_movie_list", sender: nil);
-        selectedCategory = category;
     }
     
     func prepare(for segue: UIStoryboardSegue) {
         if( segue.identifier == "sw_movie_list" ) {
             // configure movie list controller
             let movieListController = segue.destination as! MovieListViewController;
+            MovieListConfigurator.configure(movieListController, category: category!);
         }
     }
     
