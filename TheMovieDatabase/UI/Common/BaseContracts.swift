@@ -8,11 +8,15 @@
 
 import Foundation
 
-protocol BaseViewContract {
+protocol BaseViewContract: AnyObject {
+    
+    func startLoading();
+    func stopLoading();
+    func displayUserMessage(title: String, message: String);
     
 }
 
-protocol BasePresenterContract {
+protocol BasePresenterContract: AnyObject {
     
     func viewDidLoad();
     

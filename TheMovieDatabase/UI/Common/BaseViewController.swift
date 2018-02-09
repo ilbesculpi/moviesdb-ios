@@ -13,12 +13,25 @@ import RxSwift
 /**
  * This controller represents a base controller for sharing functionallity across app controllers.
  */
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, BaseViewContract {
     
     var disposeBag: DisposeBag = DisposeBag();
 
     override func viewDidLoad() {
         super.viewDidLoad();
+    }
+    
+    func startLoading() {
+        
+    }
+    
+    func stopLoading() {
+        
+    }
+    
+    func displayUserMessage(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert);
+        present(alert, animated: true, completion: nil);
     }
 
 }

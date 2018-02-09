@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol MovieListViewContract: AnyObject {
+protocol MovieListViewContract: BaseViewContract {
     
     var presenter: MovieListPresenterContract? { get set };
     
@@ -21,5 +21,7 @@ protocol MovieListViewContract: AnyObject {
 protocol MovieListPresenterContract: BasePresenterContract {
     
     weak var view: MovieListViewContract! { get set }
+    var page: Int { get set }
+    var category: MainCategory! { get set }
     
 }
