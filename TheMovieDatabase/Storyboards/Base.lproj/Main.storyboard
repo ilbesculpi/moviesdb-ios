@@ -139,21 +139,32 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="740" text="Lorem ipsum dolor set amore. Ala del hummus donce totalitarium non cesc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vb-43-dPM">
+                                                    <rect key="frame" x="92" y="49" width="220" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="8vb-43-dPM" firstAttribute="leading" secondItem="asz-ll-PxW" secondAttribute="trailing" constant="8" id="3BM-89-wkf"/>
                                                 <constraint firstItem="asz-ll-PxW" firstAttribute="leading" secondItem="pTK-zu-3vS" secondAttribute="leading" constant="8" id="7Lo-SW-aSE"/>
+                                                <constraint firstAttribute="bottom" secondItem="8vb-43-dPM" secondAttribute="bottom" constant="8" id="EsX-ZJ-P5B"/>
                                                 <constraint firstItem="3Df-8G-ndh" firstAttribute="leading" secondItem="asz-ll-PxW" secondAttribute="trailing" constant="8" id="FgZ-AX-s4o"/>
                                                 <constraint firstAttribute="trailing" secondItem="3Df-8G-ndh" secondAttribute="trailing" constant="8" id="Jk0-xa-UPB"/>
                                                 <constraint firstItem="hOt-ph-bWE" firstAttribute="trailing" secondItem="3Df-8G-ndh" secondAttribute="trailing" id="MAD-fd-HBJ"/>
                                                 <constraint firstItem="3Df-8G-ndh" firstAttribute="top" secondItem="asz-ll-PxW" secondAttribute="top" id="PS6-WE-6sX"/>
+                                                <constraint firstItem="8vb-43-dPM" firstAttribute="top" secondItem="hOt-ph-bWE" secondAttribute="bottom" constant="4" id="U8Y-FZ-jZQ"/>
                                                 <constraint firstItem="asz-ll-PxW" firstAttribute="top" secondItem="pTK-zu-3vS" secondAttribute="top" constant="8" id="com-xD-PWY"/>
                                                 <constraint firstAttribute="bottom" secondItem="asz-ll-PxW" secondAttribute="bottom" constant="8" id="lCh-Yh-P0i"/>
                                                 <constraint firstItem="hOt-ph-bWE" firstAttribute="top" secondItem="3Df-8G-ndh" secondAttribute="bottom" constant="4" id="mx4-rz-UBW"/>
                                                 <constraint firstItem="hOt-ph-bWE" firstAttribute="leading" secondItem="3Df-8G-ndh" secondAttribute="leading" id="wcw-vx-uQ5"/>
+                                                <constraint firstAttribute="trailing" secondItem="8vb-43-dPM" secondAttribute="trailing" constant="8" id="x8f-gU-yk2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="labelGenre" destination="hOt-ph-bWE" id="fbb-Nu-8Si"/>
+                                            <outlet property="labelOverview" destination="8vb-43-dPM" id="I36-4S-jP2"/>
                                             <outlet property="labelTitle" destination="3Df-8G-ndh" id="7gd-tR-jWv"/>
                                             <outlet property="pictureView" destination="asz-ll-PxW" id="O2Y-HW-o9F"/>
                                         </connections>
@@ -181,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aur-yV-Vic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2526" y="-220"/>
+            <point key="canvasLocation" x="2525.625" y="-220.77464788732394"/>
         </scene>
         <!--Show List View Controller-->
         <scene sceneID="VzC-DW-Wxh">

@@ -14,6 +14,7 @@ class MovieCell: UITableViewCell {
     @IBOutlet weak var pictureView: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelGenre: UILabel!
+    @IBOutlet weak var labelOverview: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib();
@@ -21,6 +22,7 @@ class MovieCell: UITableViewCell {
     
     func display(_ movie: Movie) {
         labelTitle.text = movie.title;
+        labelOverview.text = movie.overview;
         if let posterUrl = movie.posterUrl {
             let pictureUrl = URL(string: posterUrl)!
             let data = try! Data(contentsOf: pictureUrl);
