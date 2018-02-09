@@ -13,6 +13,8 @@ class TVShowCell: UITableViewCell {
 
     @IBOutlet weak var pictureView: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelGenre: UILabel!
+    @IBOutlet weak var labelOverview: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib();

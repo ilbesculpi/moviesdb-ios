@@ -195,7 +195,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieCell" id="s39-Ln-XYF" customClass="MovieCell" customModule="TheMovieDatabase" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TVShowCell" id="s39-Ln-XYF" customClass="TVShowCell" customModule="TheMovieDatabase" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s39-Ln-XYF" id="6W5-1n-s66">
@@ -220,6 +220,12 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor set amore" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGy-uA-5xa">
+                                                    <rect key="frame" x="80" y="62" width="232" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="eoH-ET-rTo" secondAttribute="bottom" constant="8" id="2Lk-98-Vrm"/>
@@ -227,22 +233,26 @@
                                                 <constraint firstItem="KsX-vq-FTZ" firstAttribute="top" secondItem="eoH-ET-rTo" secondAttribute="top" id="Cza-9a-8JN"/>
                                                 <constraint firstItem="urf-Ts-gh4" firstAttribute="leading" secondItem="KsX-vq-FTZ" secondAttribute="leading" id="Djb-hj-Jt3"/>
                                                 <constraint firstAttribute="trailing" secondItem="KsX-vq-FTZ" secondAttribute="trailing" constant="8" id="ZUD-Bm-8ux"/>
+                                                <constraint firstAttribute="trailing" secondItem="aGy-uA-5xa" secondAttribute="trailing" constant="8" id="a10-uM-NX5"/>
                                                 <constraint firstItem="urf-Ts-gh4" firstAttribute="trailing" secondItem="KsX-vq-FTZ" secondAttribute="trailing" id="eOd-7V-Bcf"/>
                                                 <constraint firstItem="urf-Ts-gh4" firstAttribute="top" secondItem="KsX-vq-FTZ" secondAttribute="bottom" constant="8" id="iFK-uS-Kky"/>
                                                 <constraint firstItem="eoH-ET-rTo" firstAttribute="leading" secondItem="6W5-1n-s66" secondAttribute="leading" constant="8" id="kNK-Vt-84O"/>
+                                                <constraint firstItem="aGy-uA-5xa" firstAttribute="leading" secondItem="eoH-ET-rTo" secondAttribute="trailing" constant="8" id="oer-GO-QeP"/>
+                                                <constraint firstItem="aGy-uA-5xa" firstAttribute="top" secondItem="urf-Ts-gh4" secondAttribute="bottom" constant="8" id="sfu-UG-WSw"/>
                                                 <constraint firstItem="KsX-vq-FTZ" firstAttribute="leading" secondItem="eoH-ET-rTo" secondAttribute="trailing" constant="8" id="yc2-eB-O0w"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="labelGenre" destination="urf-Ts-gh4" id="EfB-A3-NDv"/>
-                                            <outlet property="labelTitle" destination="KsX-vq-FTZ" id="RxX-44-M4O"/>
-                                            <outlet property="pictureView" destination="eoH-ET-rTo" id="My5-f8-X5E"/>
+                                            <outlet property="labelOverview" destination="aGy-uA-5xa" id="SfJ-TG-1MX"/>
+                                            <outlet property="labelTitle" destination="KsX-vq-FTZ" id="soe-uW-YEa"/>
+                                            <outlet property="pictureView" destination="eoH-ET-rTo" id="LQT-sz-2f5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Wez-vb-zRN" id="Pd4-jV-ihZ"/>
-                                    <outlet property="delegate" destination="Wez-vb-zRN" id="jFU-v0-K4B"/>
+                                    <outlet property="dataSource" destination="BrL-Ur-jbs" id="MUd-ju-tJU"/>
+                                    <outlet property="delegate" destination="BrL-Ur-jbs" id="BEK-yt-NRJ"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -255,10 +265,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="egw-TC-Nxq"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="zmv-X1-kaL" id="OGM-aP-sE7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEb-wO-wfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2526" y="678"/>
+            <point key="canvasLocation" x="2525.625" y="677.11267605633805"/>
         </scene>
         <!--Movie-->
         <scene sceneID="9eo-QI-sll">
