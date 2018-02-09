@@ -62,7 +62,7 @@ class HomeViewControllerTests: XCTestCase {
         viewController.display(section: .movies);
         XCTAssertEqual(viewController.title, "Movies");
         
-        viewController.display(section: .series);
+        viewController.display(section: .tvShows);
         XCTAssertEqual(viewController.title, "Series");
     }
     

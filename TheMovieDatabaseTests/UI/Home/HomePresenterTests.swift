@@ -56,11 +56,11 @@ class HomePresenterTests: XCTestCase {
         XCTAssertEqual(.movies, captor.value);
         
         reset(viewMock, interactorMock);
-        presenter.section = .series;
+        presenter.section = .tvShows;
         presenter.viewDidLoad();
         captor = ArgumentCaptor<MainSection>();
         verify(viewMock).display(section: captor.capture());
-        XCTAssertEqual(.series, captor.value);
+        XCTAssertEqual(.tvShows, captor.value);
         
     }
     

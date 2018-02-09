@@ -21,6 +21,9 @@ class RemoteStore: RemoteStoreContract {
         return "\(baseUrl)/\(path)?api_key=\(apiKey)&language=\(language)&page=\(page)";
     }
     
+    
+    // MARK: - Movies
+    
     func fetchMovies(_ endPointUrl: String) -> Observable<[Movie]> {
         return RxAlamofire.requestJSON(.get, endPointUrl)
             .map({ (response, json) -> [Movie] in
@@ -56,6 +59,50 @@ class RemoteStore: RemoteStoreContract {
     func fetchUpcomingMovies(page: Int, language: String) -> Observable<[Movie]> {
         let endPointUrl: String = endPoint("movie/upcoming", page: page, language: language);
         return fetchMovies(endPointUrl);
+    }
+    
+    
+    
+    // MARK: - TV Shows
+    
+    func fetchShows(_ endPointUrl: String) -> Observable<[TVShow]> {
+        return RxAlamofire.requestJSON(.get, endPointUrl)
+            .map({ (response, json) -> [TVShow] in
+                if let dict = json as? [String : AnyObject] {
+                    if let results = dict["results"] as? [[String: AnyObject]] {
+                        let showsArray = Mapper<TVShow>().mapArray(JSONArray: results);
+                        return showsArray;
+                    }
+                }
+                return [];
+            });
+    }
+    
+    /**
+     * Get a list of the current popular TV shows on TMDb API.
+     * @link https://developers.themoviedb.org/3/tv/get-popular-tv-shows
+     */
+    func fetchPopularShows(page: Int, language: String) -> Observable<[TVShow]> {
+        let endPointUrl: String = endPoint("tv/popular", page: page, language: language);
+        return fetchShows(endPointUrl);
+    }
+    
+    /**
+     * Get a list of the top rated TV shows on TMDb API.
+     * @link https://developers.themoviedb.org/3/tv/get-top-rated-tv
+     */
+    func fetchTopRatedShows(page: Int, language: String) -> Observable<[TVShow]> {
+        let endPointUrl: String = endPoint("tv/top_rated", page: page, language: language);
+        return fetchShows(endPointUrl);
+    }
+    
+    /**
+     * Get the most newly created TV shows from the TMDb API.
+     * @link https://developers.themoviedb.org/3/tv/get-latest-tv
+     */
+    func fetchLatestShows(page: Int, language: String) -> Observable<[TVShow]> {
+        let endPointUrl: String = endPoint("tv/latest", page: page, language: language);
+        return fetchShows(endPointUrl);
     }
     
 }

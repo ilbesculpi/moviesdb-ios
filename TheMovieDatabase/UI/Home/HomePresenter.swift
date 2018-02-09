@@ -13,8 +13,8 @@ import RxSwift
 class HomePresenter: HomePresenterContract {
     
     weak var view: HomeViewContract!
-    var interactor: MovieInteractorContract!
     var section: MainSection!
+    var interactor: MovieInteractorContract!
     private var disposeBag: DisposeBag = DisposeBag();
 
     func viewDidLoad() {
@@ -23,7 +23,7 @@ class HomePresenter: HomePresenterContract {
     }
     
     private func fetchAndDisplayCategories() {
-        interactor.fetchHomeCategories()
+        interactor.fetchHomeCategories(for: section)
             .subscribe(onNext: { [weak self] (categories) in
                 self?.view.display(categories: categories);
             })

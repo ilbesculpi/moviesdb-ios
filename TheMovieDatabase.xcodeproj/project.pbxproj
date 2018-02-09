@@ -45,6 +45,14 @@
 		625B6BAE202B9F7900D5C0FC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BA9202B9F7900D5C0FC /* HomeViewController.swift */; };
 		625B6BAF202B9F7900D5C0FC /* MovieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BAA202B9F7900D5C0FC /* MovieListPresenter.swift */; };
 		625B6BB0202B9F7900D5C0FC /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B6BAB202B9F7900D5C0FC /* MovieListViewController.swift */; };
+		62DAAEAD202D37FD00BC5251 /* TVShowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAAEAC202D37FD00BC5251 /* TVShowListViewController.swift */; };
+		62DAAEAF202D3CF800BC5251 /* TVShowListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAAEAE202D3CF800BC5251 /* TVShowListContracts.swift */; };
+		62DAAEB1202D3D0F00BC5251 /* TVShowListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAAEB0202D3D0F00BC5251 /* TVShowListConfigurator.swift */; };
+		62DAAEB3202D3E9A00BC5251 /* TVShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAAEB2202D3E9A00BC5251 /* TVShow.swift */; };
+		62DAAEB5202D8FDF00BC5251 /* TVShowListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAAEB4202D8FDF00BC5251 /* TVShowListPresenter.swift */; };
+		62DAAEB7202D8FF000BC5251 /* TVShowListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAAEB6202D8FF000BC5251 /* TVShowListRouter.swift */; };
+		62DAAEB9202D90A800BC5251 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAAEB8202D90A800BC5251 /* BasePresenter.swift */; };
+		62DAAEBB202D91C600BC5251 /* TVShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAAEBA202D91C600BC5251 /* TVShowCell.swift */; };
 		6459B5BE68E296D8BF24BAFB /* Pods_TheMovieDatabaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D3A4CA439E1C7DF61046B1 /* Pods_TheMovieDatabaseTests.framework */; };
 		8EBB86FC88A250C62216753F /* Pods_TheMovieDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F6711251C0505F661D9958 /* Pods_TheMovieDatabase.framework */; };
 /* End PBXBuildFile section */
@@ -113,6 +121,14 @@
 		625B6BA9202B9F7900D5C0FC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		625B6BAA202B9F7900D5C0FC /* MovieListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListPresenter.swift; sourceTree = "<group>"; };
 		625B6BAB202B9F7900D5C0FC /* MovieListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		62DAAEAC202D37FD00BC5251 /* TVShowListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowListViewController.swift; sourceTree = "<group>"; };
+		62DAAEAE202D3CF800BC5251 /* TVShowListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowListContracts.swift; sourceTree = "<group>"; };
+		62DAAEB0202D3D0F00BC5251 /* TVShowListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowListConfigurator.swift; sourceTree = "<group>"; };
+		62DAAEB2202D3E9A00BC5251 /* TVShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShow.swift; sourceTree = "<group>"; };
+		62DAAEB4202D8FDF00BC5251 /* TVShowListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowListPresenter.swift; sourceTree = "<group>"; };
+		62DAAEB6202D8FF000BC5251 /* TVShowListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowListRouter.swift; sourceTree = "<group>"; };
+		62DAAEB8202D90A800BC5251 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		62DAAEBA202D91C600BC5251 /* TVShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowCell.swift; sourceTree = "<group>"; };
 		65A79B7CFF814497F0AE1B94 /* Pods-TheMovieDatabaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDatabaseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheMovieDatabaseUITests/Pods-TheMovieDatabaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		68F6711251C0505F661D9958 /* Pods_TheMovieDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8761F780FD1AAE1A05008CDE /* Pods-TheMovieDatabaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDatabaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheMovieDatabaseTests/Pods-TheMovieDatabaseTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -241,13 +257,13 @@
 				625B6B8B202B6DB600D5C0FC /* Root */,
 				625B6B74202B66D500D5C0FC /* Common */,
 				625B6B6A202B66D500D5C0FC /* Home */,
-				625B6B65202B66D500D5C0FC /* MovieList */,
-				625B6B6D202B66D500D5C0FC /* MovieDetail */,
+				62DAAEAA202D379D00BC5251 /* Movies */,
+				62DAAEA9202D378200BC5251 /* TVShows */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		625B6B65202B66D500D5C0FC /* MovieList */ = {
+		625B6B65202B66D500D5C0FC /* List */ = {
 			isa = PBXGroup;
 			children = (
 				625B6B8E202B778300D5C0FC /* MovieListContracts.swift */,
@@ -256,7 +272,7 @@
 				625B6B90202B779E00D5C0FC /* MovieListPresenter.swift */,
 				624F084C202C9DC100715BED /* MovieCell.swift */,
 			);
-			path = MovieList;
+			path = List;
 			sourceTree = "<group>";
 		};
 		625B6B68202B66D500D5C0FC /* Resources */ = {
@@ -280,12 +296,12 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		625B6B6D202B66D500D5C0FC /* MovieDetail */ = {
+		625B6B6D202B66D500D5C0FC /* Detail */ = {
 			isa = PBXGroup;
 			children = (
 				625B6B6E202B66D500D5C0FC /* MovieDetailViewController.swift */,
 			);
-			path = MovieDetail;
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		625B6B70202B66D500D5C0FC /* Domain */ = {
@@ -302,6 +318,7 @@
 				625B6B72202B66D500D5C0FC /* MainCategory.swift */,
 				625B6B89202B6BD300D5C0FC /* MainSection.swift */,
 				625B6B92202B77F800D5C0FC /* Movie.swift */,
+				62DAAEB2202D3E9A00BC5251 /* TVShow.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -311,6 +328,7 @@
 			children = (
 				625B6B75202B66D500D5C0FC /* BaseViewController.swift */,
 				625B6B7B202B66D500D5C0FC /* BaseContracts.swift */,
+				62DAAEB8202D90A800BC5251 /* BasePresenter.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -403,6 +421,36 @@
 				625B6BAB202B9F7900D5C0FC /* MovieListViewController.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		62DAAEA9202D378200BC5251 /* TVShows */ = {
+			isa = PBXGroup;
+			children = (
+				62DAAEAB202D37D600BC5251 /* List */,
+			);
+			path = TVShows;
+			sourceTree = "<group>";
+		};
+		62DAAEAA202D379D00BC5251 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				625B6B65202B66D500D5C0FC /* List */,
+				625B6B6D202B66D500D5C0FC /* Detail */,
+			);
+			path = Movies;
+			sourceTree = "<group>";
+		};
+		62DAAEAB202D37D600BC5251 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				62DAAEAE202D3CF800BC5251 /* TVShowListContracts.swift */,
+				62DAAEB0202D3D0F00BC5251 /* TVShowListConfigurator.swift */,
+				62DAAEAC202D37FD00BC5251 /* TVShowListViewController.swift */,
+				62DAAEB4202D8FDF00BC5251 /* TVShowListPresenter.swift */,
+				62DAAEB6202D8FF000BC5251 /* TVShowListRouter.swift */,
+				62DAAEBA202D91C600BC5251 /* TVShowCell.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		B52E45BC02629BB8EC8B53C3 /* Frameworks */ = {
@@ -741,12 +789,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				625B6B93202B77F800D5C0FC /* Movie.swift in Sources */,
+				62DAAEB9202D90A800BC5251 /* BasePresenter.swift in Sources */,
 				625B6B86202B68D300D5C0FC /* MainCategoryCell.swift in Sources */,
 				625B6B91202B779E00D5C0FC /* MovieListPresenter.swift in Sources */,
 				624F0846202C108F00715BED /* RemoteStoreContract.swift in Sources */,
 				625B6B81202B66D500D5C0FC /* InteractorContracts.swift in Sources */,
 				624F084B202C983900715BED /* MovieListConfigurator.swift in Sources */,
 				625B6B7A202B66D500D5C0FC /* HomeContracts.swift in Sources */,
+				62DAAEB7202D8FF000BC5251 /* TVShowListRouter.swift in Sources */,
 				624F0849202C7F2E00715BED /* RemoteStore.swift in Sources */,
 				625B6B78202B66D500D5C0FC /* HomePresenter.swift in Sources */,
 				625B6B73202B66D500D5C0FC /* MainCategory.swift in Sources */,
@@ -754,15 +804,21 @@
 				625B6B8D202B6DE700D5C0FC /* RootViewController.swift in Sources */,
 				625B6B7C202B66D500D5C0FC /* BaseContracts.swift in Sources */,
 				625B6B7F202B66D500D5C0FC /* MovieInteractor.swift in Sources */,
+				62DAAEAF202D3CF800BC5251 /* TVShowListContracts.swift in Sources */,
 				625B6B67202B66D500D5C0FC /* MovieListViewController.swift in Sources */,
 				625B6B88202B6B9500D5C0FC /* HomeRouter.swift in Sources */,
 				624F084D202C9DC100715BED /* MovieCell.swift in Sources */,
+				62DAAEBB202D91C600BC5251 /* TVShowCell.swift in Sources */,
 				625B6B32202B66D400D5C0FC /* AppDelegate.swift in Sources */,
+				62DAAEB5202D8FDF00BC5251 /* TVShowListPresenter.swift in Sources */,
 				625B6B84202B66F800D5C0FC /* HomeConfigurator.swift in Sources */,
 				625B6B6C202B66D500D5C0FC /* HomeViewController.swift in Sources */,
 				625B6B8F202B778300D5C0FC /* MovieListContracts.swift in Sources */,
 				625B6B8A202B6BD300D5C0FC /* MainSection.swift in Sources */,
+				62DAAEB1202D3D0F00BC5251 /* TVShowListConfigurator.swift in Sources */,
 				625B6B76202B66D500D5C0FC /* BaseViewController.swift in Sources */,
+				62DAAEAD202D37FD00BC5251 /* TVShowListViewController.swift in Sources */,
+				62DAAEB3202D3E9A00BC5251 /* TVShow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
