@@ -15,6 +15,10 @@ class MainCategoryCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib();
+        // configure cell
+        let selectionView = UIView();
+        selectionView.backgroundColor = UIColor.accentColor;
+        self.selectedBackgroundView = selectionView;
     }
     
     func display(_ category: MainCategory) {
