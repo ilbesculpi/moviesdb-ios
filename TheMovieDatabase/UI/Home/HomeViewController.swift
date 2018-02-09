@@ -32,6 +32,7 @@ class HomeViewController: BaseViewController, HomeViewContract {
     override func viewDidLoad() {
         super.viewDidLoad();
         presenter?.viewDidLoad();
+        tableView.tableFooterView = UIView();
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
