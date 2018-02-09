@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
         // Configure root controllers
         configureRootControllers();
@@ -46,6 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Custom Helpers
     
+    /**
+     * Returns the root controller in the Movies tab.
+     */
     var moviesViewController: HomeViewController {
         get {
             let tabBarController = window?.rootViewController as! UITabBarController;
@@ -55,18 +57,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     };
     
+    /**
+     * Returns the root controller in the TV Shows tab.
+     */
     var seriesViewController: HomeViewController {
         get {
             let tabBarController = window?.rootViewController as! UITabBarController;
             let navController = tabBarController.viewControllers![1] as! UINavigationController;
-            let seriesController = navController.viewControllers.first as! HomeViewController;
-            return seriesController;
+            let tvShowsController = navController.viewControllers.first as! HomeViewController;
+            return tvShowsController;
         }
     };
     
+    /**
+     * Configures the controllers on each tab.
+     */
     private func configureRootControllers() {
+        // TAB Movies
         HomeConfigurator.configure(moviesViewController, section: .movies);
-        HomeConfigurator.configure(seriesViewController, section: .series);
+        // TAB TV Shows
+        HomeConfigurator.configure(seriesViewController, section: .tvShows);
     }
 
 }

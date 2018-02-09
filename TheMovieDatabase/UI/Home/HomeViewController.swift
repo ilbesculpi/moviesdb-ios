@@ -23,6 +23,12 @@ class HomeViewController: BaseViewController, HomeViewContract {
     // tableView reference
     @IBOutlet weak var tableView: UITableView!
     
+    var section: MainSection {
+        get {
+            return presenter?.section ?? .movies;
+        }
+    };
+    
     override func viewDidLoad() {
         super.viewDidLoad();
         presenter?.viewDidLoad();
@@ -73,7 +79,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let category = categories[indexPath.row];
-        router?.navigateToMovieList(category: category);
+        switch( section ) {
+            case .movies:
+                router?.navigateToMovieList(category: category);
+            case .tvShows:
+                router?.navigateToShowList(category: category);
+        }
     }
     
 }

@@ -21,5 +21,6 @@ protocol HomeViewContract: AnyObject {
 protocol HomePresenterContract: BasePresenterContract {
     
     weak var view: HomeViewContract! { get set }
+    var section: MainSection! { get set }
     
 }

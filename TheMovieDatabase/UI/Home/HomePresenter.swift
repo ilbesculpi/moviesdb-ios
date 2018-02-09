@@ -13,8 +13,8 @@ import RxSwift
 class HomePresenter: HomePresenterContract {
     
     weak var view: HomeViewContract!
-    var interactor: MovieInteractorContract!
     var section: MainSection!
+    var interactor: MovieInteractorContract!
     private var disposeBag: DisposeBag = DisposeBag();
 
     func viewDidLoad() {

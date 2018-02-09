@@ -14,6 +14,7 @@ enum MainCategory: String {
     case popular = "Popular";
     case topRated = "Top Rated";
     case upcoming = "Upcoming";
+    case recent = "Recent";
     
     var iconName: String {
         switch self {
@@ -23,6 +24,8 @@ enum MainCategory: String {
                 return "TopRatedIcon";
             case .upcoming:
                 return "UpcomingIcon";
+            case .recent:
+                return "RecentIcon";
         }
     };
     

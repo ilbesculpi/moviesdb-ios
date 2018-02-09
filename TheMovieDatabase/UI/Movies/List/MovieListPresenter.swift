@@ -10,7 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class MovieListPresenter: MovieListPresenterContract {
+class MovieListPresenter: BasePresenter, MovieListPresenterContract {
 
     weak var view: MovieListViewContract!
     var interactor: MovieInteractorContract!
@@ -18,7 +18,8 @@ class MovieListPresenter: MovieListPresenterContract {
     var category: MainCategory!
     var disposeBag: DisposeBag = DisposeBag();
     
-    func viewDidLoad() {
+    override func viewDidLoad() {
+        super.viewDidLoad();
         view.display(category: category);
         fetchMovies();
     }
