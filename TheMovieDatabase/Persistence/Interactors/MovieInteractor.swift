@@ -24,7 +24,7 @@ class MovieInteractor: MovieInteractorContract {
                 let categories: [MainCategory] = [.popular, .topRated, .upcoming];
                 return Observable.just(categories);
             case .tvShows:
-                let categories: [MainCategory] = [.popular, .topRated, .recent];
+                let categories: [MainCategory] = [.popular, .topRated, .latest];
                 return Observable.just(categories);
         }
     }
@@ -37,11 +37,28 @@ class MovieInteractor: MovieInteractorContract {
             case .popular:
                 return remoteStore.fetchPopularMovies(page: page, language: language);
             case .topRated:
-                return remoteStore.fetchPopularMovies(page: page, language: language);
+                return remoteStore.fetchTopRatedMovies(page: page, language: language);
             case .upcoming:
                 return remoteStore.fetchUpcomingMovies(page: page, language: language);
             default:
-                assertionFailure("Invalid category for movies (\(category)");
+                assertionFailure("Invalid category for movies (\(category)!");
+                return Observable.empty();
+        }
+    }
+    
+    /**
+     * Fetch a list of movies by category.
+     */
+    func fetchShows(for category: MainCategory, page: Int) -> Observable<[TVShow]> {
+        switch( category ) {
+            case .popular:
+                return remoteStore.fetchPopularShows(page: page, language: language);
+            case .topRated:
+                return remoteStore.fetchTopRatedShows(page: page, language: language);
+            case .latest:
+                return remoteStore.fetchLatestShows(page: page, language: language);
+            default:
+                assertionFailure("Invalid category for tv shows (\(category)!");
                 return Observable.empty();
         }
     }
