@@ -29,7 +29,7 @@ class TVShowListPresenter: BasePresenter, TVShowListPresenterContract {
         view.showLoadingView();
         
         interactor.fetchShows(for: category, page: page)
-            .observeOn(MainScheduler.instance)
+            //.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] (shows) in
                 self?.view.hideLoadingView();
                 self?.view.display(shows: shows);

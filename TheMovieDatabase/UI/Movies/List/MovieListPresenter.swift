@@ -27,7 +27,7 @@ class MovieListPresenter: BasePresenter, MovieListPresenterContract {
     func fetchMovies() {
         
         view.showLoadingView();
-        /*
+        
         interactor.fetchMovies(for: category, page: page)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] (movies) in
@@ -38,7 +38,7 @@ class MovieListPresenter: BasePresenter, MovieListPresenterContract {
                 self?.view.displayUserMessage(title: "Error", message: error.localizedDescription);
             })
             .disposed(by: disposeBag);
-        */
+        
     }
     
 }

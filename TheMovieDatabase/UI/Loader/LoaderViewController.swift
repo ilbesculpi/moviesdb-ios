@@ -17,11 +17,11 @@ class LoaderViewController: UIViewController {
     }
     
     func show(completion: (() -> ())?) {
-        presenter?.present(self, animated: true, completion: completion);
+        presenter?.present(self, animated: false, completion: completion);
     }
     
-    func dismiss(completion: (() -> ())?) {
-        self.presentingViewController?.dismiss(animated: true, completion: completion);
+    func hide(completion: (() -> ())?) {
+        self.presentingViewController?.dismiss(animated: false, completion: completion);
     }
     
     deinit {

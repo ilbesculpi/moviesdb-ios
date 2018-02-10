@@ -46,7 +46,7 @@ class BaseViewController: UIViewController, BaseViewContract {
     }
     
     func hideLoadingView(completion: (() -> ())?) {
-        loaderView?.dismiss(completion: completion);
+        loaderView?.hide(completion: completion);
     }
 
 }
