@@ -10,8 +10,10 @@ import Foundation
 
 protocol BaseViewContract: AnyObject {
     
-    func startLoading();
-    func stopLoading();
+    func showLoadingView();
+    func showLoadingView(completion: (()->())?);
+    func hideLoadingView();
+    func hideLoadingView(completion: (()->())?);
     func displayUserMessage(title: String, message: String);
     
 }

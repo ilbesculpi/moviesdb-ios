@@ -320,6 +320,71 @@
             </objects>
             <point key="canvasLocation" x="-709" y="114"/>
         </scene>
+        <!--Loading-->
+        <scene sceneID="Z38-wo-YrG">
+            <objects>
+                <viewController storyboardIdentifier="LoaderViewController" title="Loading" modalPresentationStyle="overCurrentContext" id="3Ur-qg-ggt" customClass="LoaderViewController" customModule="TheMovieDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="BbS-rh-GVk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52O-AP-eKx" userLabel="Overlay">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEV-oM-Rzr">
+                                <rect key="frame" x="64.5" y="190.5" width="191.5" height="187"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSY-zQ-wE7">
+                                        <rect key="frame" x="32" y="32" width="127.5" height="123"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Dt2-kE-jgB">
+                                                <rect key="frame" x="45" y="24" width="37" height="37"/>
+                                                <color key="color" red="0.28235294119999998" green="0.81176470590000005" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </activityIndicatorView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIz-Cj-L1j">
+                                                <rect key="frame" x="32" y="69" width="63.5" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="lGn-H7-wBR"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.30980392159999998" green="0.35294117650000001" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="XIz-Cj-L1j" firstAttribute="leading" secondItem="FSY-zQ-wE7" secondAttribute="leading" constant="32" id="4T1-lv-vcW"/>
+                                            <constraint firstItem="Dt2-kE-jgB" firstAttribute="centerX" secondItem="FSY-zQ-wE7" secondAttribute="centerX" id="DbB-Ga-C55"/>
+                                            <constraint firstAttribute="trailing" secondItem="XIz-Cj-L1j" secondAttribute="trailing" constant="32" id="che-Wn-xQN"/>
+                                            <constraint firstAttribute="bottom" secondItem="XIz-Cj-L1j" secondAttribute="bottom" constant="24" id="uAy-33-DfZ"/>
+                                            <constraint firstItem="XIz-Cj-L1j" firstAttribute="top" secondItem="Dt2-kE-jgB" secondAttribute="bottom" constant="8" id="wTT-bR-lQF"/>
+                                            <constraint firstItem="Dt2-kE-jgB" firstAttribute="top" secondItem="FSY-zQ-wE7" secondAttribute="top" constant="24" id="xPq-xM-YH8"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FSY-zQ-wE7" secondAttribute="trailing" constant="32" id="1LH-oY-T3N"/>
+                                    <constraint firstItem="FSY-zQ-wE7" firstAttribute="leading" secondItem="qEV-oM-Rzr" secondAttribute="leading" constant="32" id="30u-yz-My0"/>
+                                    <constraint firstItem="FSY-zQ-wE7" firstAttribute="top" secondItem="qEV-oM-Rzr" secondAttribute="top" constant="32" id="SkF-bc-BJ6"/>
+                                    <constraint firstAttribute="bottom" secondItem="FSY-zQ-wE7" secondAttribute="bottom" constant="32" id="oYz-wb-rLE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qEV-oM-Rzr" firstAttribute="centerX" secondItem="BbS-rh-GVk" secondAttribute="centerX" id="MaP-o9-pnk"/>
+                            <constraint firstItem="qEV-oM-Rzr" firstAttribute="centerY" secondItem="BbS-rh-GVk" secondAttribute="centerY" id="UbN-ai-hvj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IVY-ZF-UOB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HBu-xG-2BF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-543.75" y="-689.78873239436621"/>
+        </scene>
         <!--MoviesNav-->
         <scene sceneID="5fI-Sh-wzm">
             <objects>
