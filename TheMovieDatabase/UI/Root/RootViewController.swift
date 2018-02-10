@@ -1,5 +1,5 @@
 //
-//  MovieListViewController.swift
+//  RootViewController.swift
 //  TheMovieDatabase
 //
 //  Created by Ilbert Esculpi on 2/7/18.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class MovieListViewController: UIViewController {
+class RootViewController: UITabBarController {
 
     override func viewDidLoad() {
-        super.viewDidLoad();
+        
     }
-
+    
 }

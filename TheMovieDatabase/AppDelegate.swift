@@ -13,10 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+        
+        // Configure root controllers
+        configureRootControllers();
+        
+        return true;
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -41,6 +43,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // MARK: - Custom Helpers
+    
+    /**
+     * Returns the root controller in the Movies tab.
+     */
+    var moviesViewController: HomeViewController {
+        get {
+            let tabBarController = window?.rootViewController as! UITabBarController;
+            let navController = tabBarController.viewControllers![0] as! UINavigationController;
+            let moviesController = navController.viewControllers.first as! HomeViewController;
+            return moviesController;
+        }
+    };
+    
+    /**
+     * Returns the root controller in the TV Shows tab.
+     */
+    var seriesViewController: HomeViewController {
+        get {
+            let tabBarController = window?.rootViewController as! UITabBarController;
+            let navController = tabBarController.viewControllers![1] as! UINavigationController;
+            let tvShowsController = navController.viewControllers.first as! HomeViewController;
+            return tvShowsController;
+        }
+    };
+    
+    /**
+     * Configures the controllers on each tab.
+     */
+    private func configureRootControllers() {
+        // TAB Movies
+        HomeConfigurator.configure(moviesViewController, section: .movies);
+        // TAB TV Shows
+        HomeConfigurator.configure(seriesViewController, section: .tvShows);
+    }
 
 }
 

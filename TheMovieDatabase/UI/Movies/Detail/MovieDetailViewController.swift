@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieDetailViewController: UIViewController {
+class MovieDetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad();
