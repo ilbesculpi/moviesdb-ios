@@ -32,6 +32,7 @@ class HomeViewController: BaseViewController, HomeViewContract {
     override func viewDidLoad() {
         super.viewDidLoad();
         presenter?.viewDidLoad();
+        tableView.tableFooterView = UIView();
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,6 +79,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false);
         let category = categories[indexPath.row];
         switch( section ) {
             case .movies:

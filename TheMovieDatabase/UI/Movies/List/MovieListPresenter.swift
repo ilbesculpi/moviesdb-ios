@@ -26,17 +26,19 @@ class MovieListPresenter: BasePresenter, MovieListPresenterContract {
     
     func fetchMovies() {
         
-        view.startLoading();
+        view.showLoadingView();
         
         interactor.fetchMovies(for: category, page: page)
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] (movies) in
-                self?.view.stopLoading();
+                self?.view.hideLoadingView();
                 self?.view.display(movies: movies);
             }, onError: { [weak self] (error) in
-                self?.view.stopLoading();
+                self?.view.hideLoadingView();
                 self?.view.displayUserMessage(title: "Error", message: error.localizedDescription);
             })
             .disposed(by: disposeBag);
+        
     }
     
 }

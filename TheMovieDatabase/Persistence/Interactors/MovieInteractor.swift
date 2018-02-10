@@ -24,7 +24,7 @@ class MovieInteractor: MovieInteractorContract {
                 let categories: [MainCategory] = [.popular, .topRated, .upcoming];
                 return Observable.just(categories);
             case .tvShows:
-                let categories: [MainCategory] = [.popular, .topRated, .latest];
+                let categories: [MainCategory] = [.popular, .topRated];
                 return Observable.just(categories);
         }
     }
@@ -55,8 +55,6 @@ class MovieInteractor: MovieInteractorContract {
                 return remoteStore.fetchPopularShows(page: page, language: language);
             case .topRated:
                 return remoteStore.fetchTopRatedShows(page: page, language: language);
-            case .latest:
-                return remoteStore.fetchLatestShows(page: page, language: language);
             default:
                 assertionFailure("Invalid category for tv shows (\(category)!");
                 return Observable.empty();

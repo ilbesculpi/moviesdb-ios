@@ -25,6 +25,7 @@ class RemoteStore: RemoteStoreContract {
     // MARK: - Movies
     
     func fetchMovies(_ endPointUrl: String) -> Observable<[Movie]> {
+        print("Fetching \(endPointUrl) ...");
         return RxAlamofire.requestJSON(.get, endPointUrl)
             .map({ (response, json) -> [Movie] in
                 if let dict = json as? [String : AnyObject] {
@@ -66,6 +67,7 @@ class RemoteStore: RemoteStoreContract {
     // MARK: - TV Shows
     
     func fetchShows(_ endPointUrl: String) -> Observable<[TVShow]> {
+        print("Fetching \(endPointUrl) ...");
         return RxAlamofire.requestJSON(.get, endPointUrl)
             .map({ (response, json) -> [TVShow] in
                 if let dict = json as? [String : AnyObject] {
@@ -93,15 +95,6 @@ class RemoteStore: RemoteStoreContract {
      */
     func fetchTopRatedShows(page: Int, language: String) -> Observable<[TVShow]> {
         let endPointUrl: String = endPoint("tv/top_rated", page: page, language: language);
-        return fetchShows(endPointUrl);
-    }
-    
-    /**
-     * Get the most newly created TV shows from the TMDb API.
-     * @link https://developers.themoviedb.org/3/tv/get-latest-tv
-     */
-    func fetchLatestShows(page: Int, language: String) -> Observable<[TVShow]> {
-        let endPointUrl: String = endPoint("tv/latest", page: page, language: language);
         return fetchShows(endPointUrl);
     }
     

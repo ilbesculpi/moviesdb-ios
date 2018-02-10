@@ -20,6 +20,5 @@ protocol RemoteStoreContract {
     // MARK: - TV Shows
     func fetchPopularShows(page: Int, language: String) -> Observable<[TVShow]>;
     func fetchTopRatedShows(page: Int, language: String) -> Observable<[TVShow]>;
-    func fetchLatestShows(page: Int, language: String) -> Observable<[TVShow]>;
     
 }

@@ -26,14 +26,15 @@ class TVShowListPresenter: BasePresenter, TVShowListPresenterContract {
     
     func fetchShows() {
         
-        view.startLoading();
+        view.showLoadingView();
         
         interactor.fetchShows(for: category, page: page)
+            //.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] (shows) in
-                self?.view.stopLoading();
+                self?.view.hideLoadingView();
                 self?.view.display(shows: shows);
             }, onError: { [weak self] (error) in
-                self?.view.stopLoading();
+                self?.view.hideLoadingView();
                 self?.view.displayUserMessage(title: "Error", message: error.localizedDescription);
             })
             .disposed(by: disposeBag);

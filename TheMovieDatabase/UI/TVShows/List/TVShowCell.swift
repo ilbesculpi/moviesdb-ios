@@ -18,10 +18,15 @@ class TVShowCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib();
+        // configure cell
+        let selectionView = UIView();
+        selectionView.backgroundColor = UIColor.accentColor;
+        self.selectedBackgroundView = selectionView;
     }
     
     func display(_ show: TVShow) {
         labelTitle.text = show.name;
+        labelOverview.text = show.overview;
         if let posterUrl = show.posterUrl {
             let pictureUrl = URL(string: posterUrl)!
             let data = try! Data(contentsOf: pictureUrl);

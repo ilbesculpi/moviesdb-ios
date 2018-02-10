@@ -16,22 +16,37 @@ import RxSwift
 class BaseViewController: UIViewController, BaseViewContract {
     
     var disposeBag: DisposeBag = DisposeBag();
+    private var loaderView: LoaderViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad();
     }
     
-    func startLoading() {
-        
-    }
-    
-    func stopLoading() {
-        
-    }
-    
     func displayUserMessage(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert);
         present(alert, animated: true, completion: nil);
+    }
+    
+    func showLoadingView() {
+        showLoadingView(completion: nil);
+    }
+    
+    func showLoadingView(completion: (() -> ())?) {
+        if( loaderView == nil ) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil);
+            let controller = storyboard.instantiateViewController(withIdentifier: "LoaderViewController") as! LoaderViewController;
+            controller.presenter = self;
+            loaderView = controller;
+        }
+        loaderView?.show(completion: completion);
+    }
+    
+    func hideLoadingView() {
+        hideLoadingView(completion: nil);
+    }
+    
+    func hideLoadingView(completion: (() -> ())?) {
+        loaderView?.hide(completion: completion);
     }
 
 }
