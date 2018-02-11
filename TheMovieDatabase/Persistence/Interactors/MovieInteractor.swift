@@ -18,13 +18,13 @@ class MovieInteractor: MovieInteractorContract {
     /**
      * Fetch a list of categories to display on the Home Screen.
      */
-    func fetchHomeCategories(for section: MainSection) -> Observable<[MainCategory]> {
+    func fetchHomeCategories(for section: Section) -> Observable<[Category]> {
         switch( section ) {
             case .movies:
-                let categories: [MainCategory] = [.popular, .topRated, .upcoming];
+                let categories: [Category] = [.popular, .topRated, .upcoming];
                 return Observable.just(categories);
             case .tvShows:
-                let categories: [MainCategory] = [.popular, .topRated];
+                let categories: [Category] = [.popular, .topRated];
                 return Observable.just(categories);
         }
     }
@@ -32,7 +32,7 @@ class MovieInteractor: MovieInteractorContract {
     /**
      * Fetch a list of movies by category.
      */
-    func fetchMovies(for category: MainCategory, page: Int) -> Observable<[Movie]> {
+    func fetchMovies(for category: Category, page: Int) -> Observable<[Movie]> {
         switch( category ) {
             case .popular:
                 return remoteStore.fetchPopularMovies(page: page, language: language);
@@ -46,7 +46,7 @@ class MovieInteractor: MovieInteractorContract {
     /**
      * Fetch a list of movies by category.
      */
-    func fetchShows(for category: MainCategory, page: Int) -> Observable<[TVShow]> {
+    func fetchShows(for category: Category, page: Int) -> Observable<[TVShow]> {
         switch( category ) {
             case .popular:
                 return remoteStore.fetchPopularShows(page: page, language: language);

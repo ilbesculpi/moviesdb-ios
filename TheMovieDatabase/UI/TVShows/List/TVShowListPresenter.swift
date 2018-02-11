@@ -15,7 +15,7 @@ class TVShowListPresenter: BasePresenter, TVShowListPresenterContract {
     weak var view: TVShowListViewContract!
     var interactor: MovieInteractorContract!
     var page: Int = 1;
-    var category: MainCategory!
+    var category: Category!
     var disposeBag: DisposeBag = DisposeBag();
     
     override func viewDidLoad() {

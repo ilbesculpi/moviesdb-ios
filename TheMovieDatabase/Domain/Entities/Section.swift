@@ -1,5 +1,5 @@
 //
-//  MainSection.swift
+//  Section.swift
 //  TheMovieDatabase
 //
 //  Created by Ilbert Esculpi on 2/7/18.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-enum MainSection: String {
+enum Section: String {
     
     case movies = "Movies";
-    case tvShows = "TV Shows";
+    case tvShows = "TVShows";
     
     var title: String {
         get {
-            return rawValue;
+            return NSLocalizedString(rawValue, comment: "");
         }
     };
     

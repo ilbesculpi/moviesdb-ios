@@ -12,7 +12,7 @@ protocol TVShowListViewContract: BaseViewContract {
     
     var presenter: TVShowListPresenterContract? { get set };
     
-    func display(category: MainCategory);
+    func display(category: Category);
     func display(shows: [TVShow]);
     
 }
@@ -21,6 +21,6 @@ protocol TVShowListPresenterContract: BasePresenterContract {
     
     weak var view: TVShowListViewContract! { get set }
     var page: Int { get set }
-    var category: MainCategory! { get set }
+    var category: Category! { get set }
     
 }

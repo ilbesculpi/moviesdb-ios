@@ -1,0 +1,51 @@
+
+/* Class = "UILabel"; text = "Movie Title"; ObjectID = "3Df-8G-ndh"; */
+"3Df-8G-ndh.text" = "Movie Title";
+
+/* Class = "UIViewController"; title = "Loading"; ObjectID = "3Ur-qg-ggt"; */
+"3Ur-qg-ggt.title" = "Loading";
+
+/* Class = "UIViewController"; title = "Movie"; ObjectID = "7uN-gw-nXV"; */
+"7uN-gw-nXV.title" = "Movie";
+
+/* Class = "UILabel"; text = "Lorem ipsum dolor set amore. Ala del hummus donce totalitarium non cesc"; ObjectID = "8vb-43-dPM"; */
+"8vb-43-dPM.text" = "Lorem ipsum dolor set amore. Ala del hummus donce totalitarium non cesc";
+
+/* Class = "UITabBarItem"; title = "Movies"; ObjectID = "HVQ-NK-alj"; */
+"HVQ-NK-alj.title" = "Movies";
+
+/* Class = "UITabBarItem"; title = "TV Shows"; ObjectID = "IU0-7s-a2s"; */
+"IU0-7s-a2s.title" = "TV Shows";
+
+/* Class = "UILabel"; text = "TV Show"; ObjectID = "KsX-vq-FTZ"; */
+"KsX-vq-FTZ.text" = "TV Show";
+
+/* Class = "UINavigationItem"; title = "Movies"; ObjectID = "PgU-RB-QYi"; */
+"PgU-RB-QYi.title" = "Movies";
+
+/* Class = "UIViewController"; title = "Movies"; ObjectID = "VLG-0D-Yws"; */
+"VLG-0D-Yws.title" = "Movies";
+
+/* Class = "UIViewController"; title = "Category"; ObjectID = "Wez-vb-zRN"; */
+"Wez-vb-zRN.title" = "Category";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "XIz-Cj-L1j"; */
+"XIz-Cj-L1j.text" = "Loading...";
+
+/* Class = "UILabel"; text = "Lorem ipsum dolor set amore. Ala del hummus donce totalitarium non cesc"; ObjectID = "aGy-uA-5xa"; */
+"aGy-uA-5xa.text" = "Lorem ipsum dolor set amore. Ala del hummus donce totalitarium non cesc";
+
+/* Class = "UILabel"; text = "Genre"; ObjectID = "hOt-ph-bWE"; */
+"hOt-ph-bWE.text" = "Genre";
+
+/* Class = "UINavigationController"; title = "TVShowsNav"; ObjectID = "hm3-at-U3h"; */
+"hm3-at-U3h.title" = "TVShowsNav";
+
+/* Class = "UINavigationController"; title = "MoviesNav"; ObjectID = "npr-TK-bs7"; */
+"npr-TK-bs7.title" = "MoviesNav";
+
+/* Class = "UILabel"; text = "Category"; ObjectID = "tgr-Fa-Xjf"; */
+"tgr-Fa-Xjf.text" = "Category";
+
+/* Class = "UILabel"; text = "Genre"; ObjectID = "urf-Ts-gh4"; */
+"urf-Ts-gh4.text" = "Genre";

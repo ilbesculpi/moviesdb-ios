@@ -28,7 +28,7 @@ class MovieListViewController: BaseViewController, MovieListViewContract {
         presenter?.onResume();
     }
     
-    func display(category: MainCategory) {
+    func display(category: Category) {
         self.title = "\(category.title) Movies";
     }
     

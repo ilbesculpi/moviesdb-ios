@@ -1,5 +1,5 @@
 //
-//  MainCategory.swift
+//  Category.swift
 //  TheMovieDatabase
 //
 //  Created by Ilbert Esculpi on 2/7/18.
@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-enum MainCategory: String {
+enum Category: String {
     
     case popular = "Popular";
-    case topRated = "Top Rated";
+    case topRated = "TopRated";
     case upcoming = "Upcoming";
     
     var iconName: String {
@@ -31,7 +31,7 @@ enum MainCategory: String {
     };
     
     var title: String {
-        return rawValue;
+        return NSLocalizedString(rawValue, comment: "");
     };
     
 }

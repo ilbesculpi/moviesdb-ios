@@ -13,7 +13,7 @@ protocol MovieListViewContract: BaseViewContract {
     
     var presenter: MovieListPresenterContract? { get set };
     
-    func display(category: MainCategory);
+    func display(category: Category);
     func display(movies: [Movie]);
     
 }
@@ -22,6 +22,6 @@ protocol MovieListPresenterContract: BasePresenterContract {
     
     weak var view: MovieListViewContract! { get set }
     var page: Int { get set }
-    var category: MainCategory! { get set }
+    var category: Category! { get set }
     
 }

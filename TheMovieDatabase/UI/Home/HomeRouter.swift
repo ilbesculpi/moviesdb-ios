@@ -11,15 +11,15 @@ import UIKit
 class HomeRouter: NSObject {
     
     weak var view: HomeViewController?
-    var section: MainSection?
-    private var category: MainCategory?
+    var section: Section?
+    private var category: Category?
 
-    func navigateToMovieList(category: MainCategory) {
+    func navigateToMovieList(category: Category) {
         self.category = category;
         view?.performSegue(withIdentifier: "sw_movie_list", sender: nil);
     }
     
-    func navigateToShowList(category: MainCategory) {
+    func navigateToShowList(category: Category) {
         self.category = category;
         view?.performSegue(withIdentifier: "sw_tv_show_list", sender: nil);
     }

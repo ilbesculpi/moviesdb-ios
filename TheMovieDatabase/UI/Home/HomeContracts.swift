@@ -13,14 +13,14 @@ protocol HomeViewContract: AnyObject {
     
     var presenter: HomePresenterContract? { get set };
     
-    func display(categories: [MainCategory]);
-    func display(section: MainSection);
+    func display(categories: [Category]);
+    func display(section: Section);
     
 }
 
 protocol HomePresenterContract: BasePresenterContract {
     
     weak var view: HomeViewContract! { get set }
-    var section: MainSection! { get set }
+    var section: Section! { get set }
     
 }
