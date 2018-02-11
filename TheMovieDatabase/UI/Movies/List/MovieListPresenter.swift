@@ -21,6 +21,10 @@ class MovieListPresenter: BasePresenter, MovieListPresenterContract {
     override func viewDidLoad() {
         super.viewDidLoad();
         view.display(category: category);
+    }
+    
+    override func onResume() {
+        super.onResume();
         fetchMovies();
     }
     

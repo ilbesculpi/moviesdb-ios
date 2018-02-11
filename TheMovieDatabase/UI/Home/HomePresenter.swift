@@ -10,15 +10,20 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class HomePresenter: HomePresenterContract {
+class HomePresenter: BasePresenter, HomePresenterContract {
     
     weak var view: HomeViewContract!
     var section: MainSection!
     var interactor: MovieInteractorContract!
     private var disposeBag: DisposeBag = DisposeBag();
 
-    func viewDidLoad() {
+    override func viewDidLoad() {
+        super.viewDidLoad();
         view.display(section: section);
+    }
+    
+    override func onResume() {
+        super.onResume();
         fetchAndDisplayCategories();
     }
     

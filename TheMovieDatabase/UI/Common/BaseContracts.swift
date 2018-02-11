@@ -21,5 +21,6 @@ protocol BaseViewContract: AnyObject {
 protocol BasePresenterContract: AnyObject {
     
     func viewDidLoad();
+    func onResume();
     
 }
