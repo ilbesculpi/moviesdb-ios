@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		323DF9AD85608CAD4399470F /* Pods_TheMovieDatabaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD84471C31A15E5C47BC271 /* Pods_TheMovieDatabaseUITests.framework */; };
+		620A45E4202EB3A6002E3C0A /* CacheContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A45E3202EB3A6002E3C0A /* CacheContract.swift */; };
+		620A45E7202EB5AE002E3C0A /* CacheStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A45E6202EB5AE002E3C0A /* CacheStore.swift */; };
 		624F0844202C03E400715BED /* MovieInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F0843202C03E300715BED /* MovieInteractor.swift */; };
 		624F0846202C108F00715BED /* RemoteStoreContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F0845202C108F00715BED /* RemoteStoreContract.swift */; };
 		624F0849202C7F2E00715BED /* RemoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F0848202C7F2E00715BED /* RemoteStore.swift */; };
@@ -83,6 +85,8 @@
 		1DD84471C31A15E5C47BC271 /* Pods_TheMovieDatabaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDatabaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48BAE161F0ADCF720F00AA3F /* Pods-TheMovieDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDatabase.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheMovieDatabase/Pods-TheMovieDatabase.release.xcconfig"; sourceTree = "<group>"; };
 		53D3A4CA439E1C7DF61046B1 /* Pods_TheMovieDatabaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDatabaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		620A45E3202EB3A6002E3C0A /* CacheContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheContract.swift; sourceTree = "<group>"; };
+		620A45E6202EB5AE002E3C0A /* CacheStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStore.swift; sourceTree = "<group>"; };
 		624F0843202C03E300715BED /* MovieInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInteractor.swift; sourceTree = "<group>"; };
 		624F0845202C108F00715BED /* RemoteStoreContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStoreContract.swift; sourceTree = "<group>"; };
 		624F0848202C7F2E00715BED /* RemoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStore.swift; sourceTree = "<group>"; };
@@ -186,6 +190,14 @@
 				94FDE6EAE68FE0CA714E57E5 /* Pods-TheMovieDatabaseUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		620A45E5202EB58D002E3C0A /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				620A45E6202EB5AE002E3C0A /* CacheStore.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		624F0847202C7EBD00715BED /* Network */ = {
@@ -361,6 +373,7 @@
 			children = (
 				625B6B80202B66D500D5C0FC /* InteractorContracts.swift */,
 				624F0845202C108F00715BED /* RemoteStoreContract.swift */,
+				620A45E3202EB3A6002E3C0A /* CacheContract.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -386,6 +399,7 @@
 			children = (
 				625B6B82202B66D500D5C0FC /* Contracts */,
 				625B6B7D202B66D500D5C0FC /* Interactors */,
+				620A45E5202EB58D002E3C0A /* Cache */,
 				624F0847202C7EBD00715BED /* Network */,
 			);
 			path = Persistence;
@@ -803,6 +817,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TheMovieDatabase/Pods-TheMovieDatabase-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AwesomeCache/AwesomeCache.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -812,6 +827,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AwesomeCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -845,6 +861,7 @@
 				62DAAEBD202DAC4C00BC5251 /* AppConstants.swift in Sources */,
 				625B6B73202B66D500D5C0FC /* MainCategory.swift in Sources */,
 				625B6B6F202B66D500D5C0FC /* MovieDetailViewController.swift in Sources */,
+				620A45E7202EB5AE002E3C0A /* CacheStore.swift in Sources */,
 				625B6B8D202B6DE700D5C0FC /* RootViewController.swift in Sources */,
 				625B6B7C202B66D500D5C0FC /* BaseContracts.swift in Sources */,
 				625B6B7F202B66D500D5C0FC /* MovieInteractor.swift in Sources */,
@@ -858,6 +875,7 @@
 				625B6B84202B66F800D5C0FC /* HomeConfigurator.swift in Sources */,
 				625B6B6C202B66D500D5C0FC /* HomeViewController.swift in Sources */,
 				625B6B8F202B778300D5C0FC /* MovieListContracts.swift in Sources */,
+				620A45E4202EB3A6002E3C0A /* CacheContract.swift in Sources */,
 				625B6B8A202B6BD300D5C0FC /* MainSection.swift in Sources */,
 				62DAAEB1202D3D0F00BC5251 /* TVShowListConfigurator.swift in Sources */,
 				625B6B76202B66D500D5C0FC /* BaseViewController.swift in Sources */,

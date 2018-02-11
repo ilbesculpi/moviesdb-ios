@@ -35,6 +35,11 @@ class HomeViewController: BaseViewController, HomeViewContract {
         tableView.tableFooterView = UIView();
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+        presenter?.onResume();
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         router?.prepare(for: segue);
     }

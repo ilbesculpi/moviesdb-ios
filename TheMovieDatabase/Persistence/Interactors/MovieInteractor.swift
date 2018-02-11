@@ -40,9 +40,6 @@ class MovieInteractor: MovieInteractorContract {
                 return remoteStore.fetchTopRatedMovies(page: page, language: language);
             case .upcoming:
                 return remoteStore.fetchUpcomingMovies(page: page, language: language);
-            default:
-                assertionFailure("Invalid category for movies (\(category)!");
-                return Observable.empty();
         }
     }
     

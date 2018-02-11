@@ -14,4 +14,8 @@ open class BasePresenter: BasePresenterContract {
         
     }
     
+    func onResume() {
+        
+    }
+    
 }
