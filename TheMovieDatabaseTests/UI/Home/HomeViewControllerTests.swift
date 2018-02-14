@@ -15,7 +15,7 @@ class HomeViewControllerTests: XCTestCase {
     
     var viewController: HomeViewController!
     var presenterMock: MockHomePresenter!
-        
+    
     override func setUp() {
         super.setUp();
         viewController = loadViewController();
@@ -96,7 +96,7 @@ class HomeViewControllerTests: XCTestCase {
         _ = viewController.view;
         viewController.viewDidAppear(false);
         
-        let categories: [MainCategory] = [.popular, .topRated, .upcoming];
+        let categories: [Criteria] = [.popular, .topRated, .upcoming];
         viewController.display(categories: categories);
         
         let tableView = viewController.tableView!
@@ -119,9 +119,8 @@ class HomeViewControllerTests: XCTestCase {
         cell = tableView.cellForRow(at: indexPath) as? MainCategoryCell;
         XCTAssertNotNil(cell);
         XCTAssertEqual("Upcoming", cell?.labelTitle.text);
-        
     }
-    
+ 
 }
 
 

@@ -18,7 +18,7 @@ class HomeViewController: BaseViewController, HomeViewContract {
     var router: HomeRouter?
     
     // List of categories to display
-    var categories: [Category] = [];
+    var categories: [Criteria] = [];
     
     // tableView reference
     @IBOutlet weak var tableView: UITableView!
@@ -44,7 +44,7 @@ class HomeViewController: BaseViewController, HomeViewContract {
         router?.prepare(for: segue);
     }
     
-    func display(categories: [Category]) {
+    func display(categories: [Criteria]) {
         self.categories = categories;
         self.tableView.reloadData();
     }
@@ -77,7 +77,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let cell: MainCategoryCell = tableView.dequeueReusableCell(withIdentifier: "MainCategoryCell") as! MainCategoryCell;
         
         // configure cell
-        let category: Category = categories[indexPath.row];
+        let category: Criteria = categories[indexPath.row];
         cell.display(category);
         
         return cell;

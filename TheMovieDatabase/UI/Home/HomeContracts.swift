@@ -13,7 +13,7 @@ protocol HomeViewContract: AnyObject {
     
     var presenter: HomePresenterContract? { get set };
     
-    func display(categories: [Category]);
+    func display(categories: [Criteria]);
     func display(section: Section);
     
 }

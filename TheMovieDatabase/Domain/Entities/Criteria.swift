@@ -1,5 +1,5 @@
 //
-//  Category.swift
+//  Criteria.swift
 //  TheMovieDatabase
 //
 //  Created by Ilbert Esculpi on 2/7/18.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum Category: String {
+enum Criteria: String {
     
     case popular = "Popular";
     case topRated = "TopRated";

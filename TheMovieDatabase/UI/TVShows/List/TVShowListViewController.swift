@@ -21,7 +21,7 @@ class TVShowListViewController: BaseViewController, TVShowListViewContract {
         presenter?.viewDidLoad();
     }
     
-    func display(category: Category) {
+    func display(category: Criteria) {
         self.title = "\(category.title) TV Shows";
     }
     

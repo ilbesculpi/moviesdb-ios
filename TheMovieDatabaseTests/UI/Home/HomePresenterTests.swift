@@ -44,21 +44,21 @@ class HomePresenterTests: XCTestCase {
         
         // mock interactor interactions
         stub(interactorMock) { (mock) in
-            let categoriesResult: Observable<[MainCategory]> = Observable.just([]);
-            when(mock).fetchHomeCategories()
+            let categoriesResult: Observable<[Criteria]> = Observable.just([]);
+            when(mock).fetchHomeCategories(for: any())
                 .thenReturn(categoriesResult);
         }
         
         presenter.section = .movies;
         presenter.viewDidLoad();
-        var captor = ArgumentCaptor<MainSection>();
+        var captor = ArgumentCaptor<Section>();
         verify(viewMock).display(section: captor.capture());
         XCTAssertEqual(.movies, captor.value);
         
         reset(viewMock, interactorMock);
         presenter.section = .tvShows;
         presenter.viewDidLoad();
-        captor = ArgumentCaptor<MainSection>();
+        captor = ArgumentCaptor<Section>();
         verify(viewMock).display(section: captor.capture());
         XCTAssertEqual(.tvShows, captor.value);
         
@@ -75,22 +75,22 @@ class HomePresenterTests: XCTestCase {
         
         // mock interactor interactions
         stub(interactorMock) { (mock) in
-            let categoriesResult = Observable.just([MainCategory.popular, MainCategory.topRated, MainCategory.upcoming]);
-            when(mock).fetchHomeCategories()
+            let categoriesResult = Observable.just([Criteria.popular, Criteria.topRated, Criteria.upcoming]);
+            when(mock).fetchHomeCategories(for: any())
                 .thenReturn(categoriesResult);
         }
         
         presenter.viewDidLoad();
         
-        let expectedCategories = [MainCategory.popular, MainCategory.topRated, MainCategory.upcoming];
-        let captor = ArgumentCaptor<[MainCategory]>();
-        verify(interactorMock).fetchHomeCategories();
+        let expectedCategories = [Criteria.popular, Criteria.topRated, Criteria.upcoming];
+        let captor = ArgumentCaptor<[Criteria]>();
+        verify(interactorMock).fetchHomeCategories(for: any());
         verify(viewMock).display(categories: captor.capture());
         XCTAssertNotNil(captor.value);
         XCTAssertEqual(expectedCategories, captor.value!);
         
     }
-    
+ 
     
 }
 

@@ -12,14 +12,14 @@ class HomeRouter: NSObject {
     
     weak var view: HomeViewController?
     var section: Section?
-    private var category: Category?
+    private var category: Criteria?
 
-    func navigateToMovieList(category: Category) {
+    func navigateToMovieList(category: Criteria) {
         self.category = category;
         view?.performSegue(withIdentifier: "sw_movie_list", sender: nil);
     }
     
-    func navigateToShowList(category: Category) {
+    func navigateToShowList(category: Criteria) {
         self.category = category;
         view?.performSegue(withIdentifier: "sw_tv_show_list", sender: nil);
     }

@@ -28,7 +28,7 @@ class MovieListViewController: BaseViewController, MovieListViewContract {
         presenter?.onResume();
     }
     
-    func display(category: Category) {
+    func display(category: Criteria) {
         self.title = "\(category.title) Movies";
     }
     

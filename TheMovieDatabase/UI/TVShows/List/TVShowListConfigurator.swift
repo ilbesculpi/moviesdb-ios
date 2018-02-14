@@ -10,7 +10,7 @@ import Foundation
 
 class TVShowListConfigurator: NSObject {
     
-    class func configure(_ view: TVShowListViewController, category: Category) {
+    class func configure(_ view: TVShowListViewController, category: Criteria) {
         
         let presenter = TVShowListPresenter();
         let interactor = MovieInteractor();

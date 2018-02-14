@@ -1,7 +1,7 @@
-// MARK: - Mocks generated from file: TheMovieDatabase/UI/Home/HomeViewController.swift at 2018-02-08 04:41:42 +0000
+// MARK: - Mocks generated from file: TheMovieDatabase/Persistence/Interactors/MovieInteractor.swift at 2018-02-13 02:12:13 +0000
 
 //
-//  HomeViewController.swift
+//  MovieInteractor.swift
 //  TheMovieDatabase
 //
 //  Created by Ilbert Esculpi on 2/7/18.
@@ -15,64 +15,40 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-class MockHomeViewController: HomeViewController, Cuckoo.Mock {
-    typealias MocksType = HomeViewController
-    typealias Stubbing = __StubbingProxy_HomeViewController
-    typealias Verification = __VerificationProxy_HomeViewController
+class MockMovieInteractor: MovieInteractor, Cuckoo.Mock {
+    typealias MocksType = MovieInteractor
+    typealias Stubbing = __StubbingProxy_MovieInteractor
+    typealias Verification = __VerificationProxy_MovieInteractor
     let cuckoo_manager = Cuckoo.MockManager()
 
-    private var observed: HomeViewController?
+    private var observed: MovieInteractor?
 
-    func spy(on victim: HomeViewController) -> Self {
+    func spy(on victim: MovieInteractor) -> Self {
         observed = victim
         return self
     }
 
     
-    // ["name": "presenter", "accesibility": "", "@type": "InstanceVariable", "type": "HomePresenterContract?", "isReadOnly": false]
-     override var presenter: HomePresenterContract? {
+    // ["name": "remoteStore", "accesibility": "", "@type": "InstanceVariable", "type": "RemoteStoreContract!", "isReadOnly": false]
+     override var remoteStore: RemoteStoreContract! {
         get {
-            return cuckoo_manager.getter("presenter", original: observed.map { o in return { () -> HomePresenterContract? in o.presenter }})
+            return cuckoo_manager.getter("remoteStore", original: observed.map { o in return { () -> RemoteStoreContract! in o.remoteStore }})
         }
         
         set {
-            cuckoo_manager.setter("presenter", value: newValue, original: observed != nil ? { self.observed?.presenter = $0 } : nil)
+            cuckoo_manager.setter("remoteStore", value: newValue, original: observed != nil ? { self.observed?.remoteStore = $0 } : nil)
         }
         
     }
     
-    // ["name": "router", "accesibility": "", "@type": "InstanceVariable", "type": "HomeRouter?", "isReadOnly": false]
-     override var router: HomeRouter? {
+    // ["name": "language", "accesibility": "", "@type": "InstanceVariable", "type": "String", "isReadOnly": false]
+     override var language: String {
         get {
-            return cuckoo_manager.getter("router", original: observed.map { o in return { () -> HomeRouter? in o.router }})
+            return cuckoo_manager.getter("language", original: observed.map { o in return { () -> String in o.language }})
         }
         
         set {
-            cuckoo_manager.setter("router", value: newValue, original: observed != nil ? { self.observed?.router = $0 } : nil)
-        }
-        
-    }
-    
-    // ["name": "categories", "accesibility": "", "@type": "InstanceVariable", "type": "[MainCategory]", "isReadOnly": false]
-     override var categories: [MainCategory] {
-        get {
-            return cuckoo_manager.getter("categories", original: observed.map { o in return { () -> [MainCategory] in o.categories }})
-        }
-        
-        set {
-            cuckoo_manager.setter("categories", value: newValue, original: observed != nil ? { self.observed?.categories = $0 } : nil)
-        }
-        
-    }
-    
-    // ["name": "tableView", "accesibility": "", "@type": "InstanceVariable", "type": "UITableView!", "isReadOnly": false]
-     override var tableView: UITableView! {
-        get {
-            return cuckoo_manager.getter("tableView", original: observed.map { o in return { () -> UITableView! in o.tableView }})
-        }
-        
-        set {
-            cuckoo_manager.setter("tableView", value: newValue, original: observed != nil ? { self.observed?.tableView = $0 } : nil)
+            cuckoo_manager.setter("language", value: newValue, original: observed != nil ? { self.observed?.language = $0 } : nil)
         }
         
     }
@@ -81,111 +57,84 @@ class MockHomeViewController: HomeViewController, Cuckoo.Mock {
     
 
     
-    // ["name": "viewDidLoad", "returnSignature": "", "fullyQualifiedName": "viewDidLoad()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.StubNoReturnFunction"]
-     override func viewDidLoad()  {
+    // ["name": "fetchHomeCategories", "returnSignature": " -> Observable<[Criteria]>", "fullyQualifiedName": "fetchHomeCategories(for: Section) -> Observable<[Criteria]>", "parameterSignature": "for section: Section", "parameterSignatureWithoutNames": "section: Section", "inputTypes": "Section", "isThrowing": false, "isInit": false, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "section", "call": "for: section", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("for"), name: "section", type: "Section", range: CountableRange(444..<464), nameRange: CountableRange(444..<447))], "returnType": "Observable<[Criteria]>", "isOptional": false, "stubFunction": "Cuckoo.StubFunction"]
+     override func fetchHomeCategories(for section: Section)  -> Observable<[Criteria]> {
         
-            return cuckoo_manager.call("viewDidLoad()",
-                parameters: (),
-                original: observed.map { o in
-                    return { (args) in
-                        let () = args
-                         o.viewDidLoad()
-                    }
-                })
-        
-    }
-    
-    // ["name": "prepare", "returnSignature": "", "fullyQualifiedName": "prepare(for: UIStoryboardSegue, sender: Any?)", "parameterSignature": "for segue: UIStoryboardSegue, sender: Any?", "parameterSignatureWithoutNames": "segue: UIStoryboardSegue, sender: Any?", "inputTypes": "UIStoryboardSegue, Any?", "isThrowing": false, "isInit": false, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "segue, sender", "call": "for: segue, sender: sender", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("for"), name: "segue", type: "UIStoryboardSegue", range: CountableRange(672..<700), nameRange: CountableRange(672..<675)), CuckooGeneratorFramework.MethodParameter(label: Optional("sender"), name: "sender", type: "Any?", range: CountableRange(702..<714), nameRange: CountableRange(702..<708))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.StubNoReturnFunction"]
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
-        
-            return cuckoo_manager.call("prepare(for: UIStoryboardSegue, sender: Any?)",
-                parameters: (segue, sender),
-                original: observed.map { o in
-                    return { (args) in
-                        let (segue, sender) = args
-                         o.prepare(for: segue, sender: sender)
-                    }
-                })
-        
-    }
-    
-    // ["name": "display", "returnSignature": "", "fullyQualifiedName": "display(categories: [MainCategory])", "parameterSignature": "categories: [MainCategory]", "parameterSignatureWithoutNames": "categories: [MainCategory]", "inputTypes": "[MainCategory]", "isThrowing": false, "isInit": false, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "categories", "call": "categories: categories", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("categories"), name: "categories", type: "[MainCategory]", range: CountableRange(783..<809), nameRange: CountableRange(783..<793))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.StubNoReturnFunction"]
-     override func display(categories: [MainCategory])  {
-        
-            return cuckoo_manager.call("display(categories: [MainCategory])",
-                parameters: (categories),
-                original: observed.map { o in
-                    return { (args) in
-                        let (categories) = args
-                         o.display(categories: categories)
-                    }
-                })
-        
-    }
-    
-    // ["name": "display", "returnSignature": "", "fullyQualifiedName": "display(section: MainSection)", "parameterSignature": "section: MainSection", "parameterSignatureWithoutNames": "section: MainSection", "inputTypes": "MainSection", "isThrowing": false, "isInit": false, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "section", "call": "section: section", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("section"), name: "section", type: "MainSection", range: CountableRange(916..<936), nameRange: CountableRange(916..<923))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.StubNoReturnFunction"]
-     override func display(section: MainSection)  {
-        
-            return cuckoo_manager.call("display(section: MainSection)",
+            return cuckoo_manager.call("fetchHomeCategories(for: Section) -> Observable<[Criteria]>",
                 parameters: (section),
                 original: observed.map { o in
-                    return { (args) in
+                    return { (args) -> Observable<[Criteria]> in
                         let (section) = args
-                         o.display(section: section)
+                        return o.fetchHomeCategories(for: section)
+                    }
+                })
+        
+    }
+    
+    // ["name": "fetchMovies", "returnSignature": " -> Observable<[Movie]>", "fullyQualifiedName": "fetchMovies(for: Criteria, page: Int) -> Observable<[Movie]>", "parameterSignature": "for category: Criteria, page: Int", "parameterSignatureWithoutNames": "category: Criteria, page: Int", "inputTypes": "Criteria, Int", "isThrowing": false, "isInit": false, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "category, page", "call": "for: category, page: page", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("for"), name: "category", type: "Criteria", range: CountableRange(927..<949), nameRange: CountableRange(927..<930)), CuckooGeneratorFramework.MethodParameter(label: Optional("page"), name: "page", type: "Int", range: CountableRange(951..<960), nameRange: CountableRange(951..<955))], "returnType": "Observable<[Movie]>", "isOptional": false, "stubFunction": "Cuckoo.StubFunction"]
+     override func fetchMovies(for category: Criteria, page: Int)  -> Observable<[Movie]> {
+        
+            return cuckoo_manager.call("fetchMovies(for: Criteria, page: Int) -> Observable<[Movie]>",
+                parameters: (category, page),
+                original: observed.map { o in
+                    return { (args) -> Observable<[Movie]> in
+                        let (category, page) = args
+                        return o.fetchMovies(for: category, page: page)
+                    }
+                })
+        
+    }
+    
+    // ["name": "fetchShows", "returnSignature": " -> Observable<[TVShow]>", "fullyQualifiedName": "fetchShows(for: Criteria, page: Int) -> Observable<[TVShow]>", "parameterSignature": "for category: Criteria, page: Int", "parameterSignatureWithoutNames": "category: Criteria, page: Int", "inputTypes": "Criteria, Int", "isThrowing": false, "isInit": false, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "category, page", "call": "for: category, page: page", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("for"), name: "category", type: "Criteria", range: CountableRange(1462..<1484), nameRange: CountableRange(1462..<1465)), CuckooGeneratorFramework.MethodParameter(label: Optional("page"), name: "page", type: "Int", range: CountableRange(1486..<1495), nameRange: CountableRange(1486..<1490))], "returnType": "Observable<[TVShow]>", "isOptional": false, "stubFunction": "Cuckoo.StubFunction"]
+     override func fetchShows(for category: Criteria, page: Int)  -> Observable<[TVShow]> {
+        
+            return cuckoo_manager.call("fetchShows(for: Criteria, page: Int) -> Observable<[TVShow]>",
+                parameters: (category, page),
+                original: observed.map { o in
+                    return { (args) -> Observable<[TVShow]> in
+                        let (category, page) = args
+                        return o.fetchShows(for: category, page: page)
                     }
                 })
         
     }
     
 
-    struct __StubbingProxy_HomeViewController: Cuckoo.StubbingProxy {
+    struct __StubbingProxy_MovieInteractor: Cuckoo.StubbingProxy {
         private let cuckoo_manager: Cuckoo.MockManager
 
         init(manager: Cuckoo.MockManager) {
             self.cuckoo_manager = manager
         }
         
-        var presenter: Cuckoo.ToBeStubbedProperty<HomePresenterContract?> {
-            return .init(manager: cuckoo_manager, name: "presenter")
+        var remoteStore: Cuckoo.ToBeStubbedProperty<RemoteStoreContract?> {
+            return .init(manager: cuckoo_manager, name: "remoteStore")
         }
         
-        var router: Cuckoo.ToBeStubbedProperty<HomeRouter?> {
-            return .init(manager: cuckoo_manager, name: "router")
-        }
-        
-        var categories: Cuckoo.ToBeStubbedProperty<[MainCategory]> {
-            return .init(manager: cuckoo_manager, name: "categories")
-        }
-        
-        var tableView: Cuckoo.ToBeStubbedProperty<UITableView?> {
-            return .init(manager: cuckoo_manager, name: "tableView")
+        var language: Cuckoo.ToBeStubbedProperty<String> {
+            return .init(manager: cuckoo_manager, name: "language")
         }
         
         
-        func viewDidLoad() -> Cuckoo.StubNoReturnFunction<()> {
-            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-            return .init(stub: cuckoo_manager.createStub("viewDidLoad()", parameterMatchers: matchers))
+        func fetchHomeCategories<M1: Cuckoo.Matchable>(for section: M1) -> Cuckoo.StubFunction<(Section), Observable<[Criteria]>> where M1.MatchedType == Section {
+            let matchers: [Cuckoo.ParameterMatcher<(Section)>] = [wrap(matchable: section) { $0 }]
+            return .init(stub: cuckoo_manager.createStub("fetchHomeCategories(for: Section) -> Observable<[Criteria]>", parameterMatchers: matchers))
         }
         
-        func prepare<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(for segue: M1, sender: M2) -> Cuckoo.StubNoReturnFunction<(UIStoryboardSegue, Any?)> where M1.MatchedType == UIStoryboardSegue, M2.MatchedType == Any? {
-            let matchers: [Cuckoo.ParameterMatcher<(UIStoryboardSegue, Any?)>] = [wrap(matchable: segue) { $0.0 }, wrap(matchable: sender) { $0.1 }]
-            return .init(stub: cuckoo_manager.createStub("prepare(for: UIStoryboardSegue, sender: Any?)", parameterMatchers: matchers))
+        func fetchMovies<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(for category: M1, page: M2) -> Cuckoo.StubFunction<(Criteria, Int), Observable<[Movie]>> where M1.MatchedType == Criteria, M2.MatchedType == Int {
+            let matchers: [Cuckoo.ParameterMatcher<(Criteria, Int)>] = [wrap(matchable: category) { $0.0 }, wrap(matchable: page) { $0.1 }]
+            return .init(stub: cuckoo_manager.createStub("fetchMovies(for: Criteria, page: Int) -> Observable<[Movie]>", parameterMatchers: matchers))
         }
         
-        func display<M1: Cuckoo.Matchable>(categories: M1) -> Cuckoo.StubNoReturnFunction<([MainCategory])> where M1.MatchedType == [MainCategory] {
-            let matchers: [Cuckoo.ParameterMatcher<([MainCategory])>] = [wrap(matchable: categories) { $0 }]
-            return .init(stub: cuckoo_manager.createStub("display(categories: [MainCategory])", parameterMatchers: matchers))
-        }
-        
-        func display<M1: Cuckoo.Matchable>(section: M1) -> Cuckoo.StubNoReturnFunction<(MainSection)> where M1.MatchedType == MainSection {
-            let matchers: [Cuckoo.ParameterMatcher<(MainSection)>] = [wrap(matchable: section) { $0 }]
-            return .init(stub: cuckoo_manager.createStub("display(section: MainSection)", parameterMatchers: matchers))
+        func fetchShows<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(for category: M1, page: M2) -> Cuckoo.StubFunction<(Criteria, Int), Observable<[TVShow]>> where M1.MatchedType == Criteria, M2.MatchedType == Int {
+            let matchers: [Cuckoo.ParameterMatcher<(Criteria, Int)>] = [wrap(matchable: category) { $0.0 }, wrap(matchable: page) { $0.1 }]
+            return .init(stub: cuckoo_manager.createStub("fetchShows(for: Criteria, page: Int) -> Observable<[TVShow]>", parameterMatchers: matchers))
         }
         
     }
 
 
-    struct __VerificationProxy_HomeViewController: Cuckoo.VerificationProxy {
+    struct __VerificationProxy_MovieInteractor: Cuckoo.VerificationProxy {
         private let cuckoo_manager: Cuckoo.MockManager
         private let callMatcher: Cuckoo.CallMatcher
         private let sourceLocation: Cuckoo.SourceLocation
@@ -197,46 +146,32 @@ class MockHomeViewController: HomeViewController, Cuckoo.Mock {
         }
 
         
-        var presenter: Cuckoo.VerifyProperty<HomePresenterContract?> {
-            return .init(manager: cuckoo_manager, name: "presenter", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        var remoteStore: Cuckoo.VerifyProperty<RemoteStoreContract?> {
+            return .init(manager: cuckoo_manager, name: "remoteStore", callMatcher: callMatcher, sourceLocation: sourceLocation)
         }
         
-        var router: Cuckoo.VerifyProperty<HomeRouter?> {
-            return .init(manager: cuckoo_manager, name: "router", callMatcher: callMatcher, sourceLocation: sourceLocation)
-        }
-        
-        var categories: Cuckoo.VerifyProperty<[MainCategory]> {
-            return .init(manager: cuckoo_manager, name: "categories", callMatcher: callMatcher, sourceLocation: sourceLocation)
-        }
-        
-        var tableView: Cuckoo.VerifyProperty<UITableView?> {
-            return .init(manager: cuckoo_manager, name: "tableView", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        var language: Cuckoo.VerifyProperty<String> {
+            return .init(manager: cuckoo_manager, name: "language", callMatcher: callMatcher, sourceLocation: sourceLocation)
         }
         
 
         
         @discardableResult
-        func viewDidLoad() -> Cuckoo.__DoNotUse<Void> {
-            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-            return cuckoo_manager.verify("viewDidLoad()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        func fetchHomeCategories<M1: Cuckoo.Matchable>(for section: M1) -> Cuckoo.__DoNotUse<Observable<[Criteria]>> where M1.MatchedType == Section {
+            let matchers: [Cuckoo.ParameterMatcher<(Section)>] = [wrap(matchable: section) { $0 }]
+            return cuckoo_manager.verify("fetchHomeCategories(for: Section) -> Observable<[Criteria]>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
         }
         
         @discardableResult
-        func prepare<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(for segue: M1, sender: M2) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == UIStoryboardSegue, M2.MatchedType == Any? {
-            let matchers: [Cuckoo.ParameterMatcher<(UIStoryboardSegue, Any?)>] = [wrap(matchable: segue) { $0.0 }, wrap(matchable: sender) { $0.1 }]
-            return cuckoo_manager.verify("prepare(for: UIStoryboardSegue, sender: Any?)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        func fetchMovies<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(for category: M1, page: M2) -> Cuckoo.__DoNotUse<Observable<[Movie]>> where M1.MatchedType == Criteria, M2.MatchedType == Int {
+            let matchers: [Cuckoo.ParameterMatcher<(Criteria, Int)>] = [wrap(matchable: category) { $0.0 }, wrap(matchable: page) { $0.1 }]
+            return cuckoo_manager.verify("fetchMovies(for: Criteria, page: Int) -> Observable<[Movie]>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
         }
         
         @discardableResult
-        func display<M1: Cuckoo.Matchable>(categories: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == [MainCategory] {
-            let matchers: [Cuckoo.ParameterMatcher<([MainCategory])>] = [wrap(matchable: categories) { $0 }]
-            return cuckoo_manager.verify("display(categories: [MainCategory])", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-        }
-        
-        @discardableResult
-        func display<M1: Cuckoo.Matchable>(section: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == MainSection {
-            let matchers: [Cuckoo.ParameterMatcher<(MainSection)>] = [wrap(matchable: section) { $0 }]
-            return cuckoo_manager.verify("display(section: MainSection)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        func fetchShows<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(for category: M1, page: M2) -> Cuckoo.__DoNotUse<Observable<[TVShow]>> where M1.MatchedType == Criteria, M2.MatchedType == Int {
+            let matchers: [Cuckoo.ParameterMatcher<(Criteria, Int)>] = [wrap(matchable: category) { $0.0 }, wrap(matchable: page) { $0.1 }]
+            return cuckoo_manager.verify("fetchShows(for: Criteria, page: Int) -> Observable<[TVShow]>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
         }
         
     }
@@ -244,38 +179,20 @@ class MockHomeViewController: HomeViewController, Cuckoo.Mock {
 
 }
 
- class HomeViewControllerStub: HomeViewController {
+ class MovieInteractorStub: MovieInteractor {
     
-     override var presenter: HomePresenterContract? {
+     override var remoteStore: RemoteStoreContract! {
         get {
-            return DefaultValueRegistry.defaultValue(for: (HomePresenterContract?).self)
+            return DefaultValueRegistry.defaultValue(for: (RemoteStoreContract!).self)
         }
         
         set { }
         
     }
     
-     override var router: HomeRouter? {
+     override var language: String {
         get {
-            return DefaultValueRegistry.defaultValue(for: (HomeRouter?).self)
-        }
-        
-        set { }
-        
-    }
-    
-     override var categories: [MainCategory] {
-        get {
-            return DefaultValueRegistry.defaultValue(for: ([MainCategory]).self)
-        }
-        
-        set { }
-        
-    }
-    
-     override var tableView: UITableView! {
-        get {
-            return DefaultValueRegistry.defaultValue(for: (UITableView!).self)
+            return DefaultValueRegistry.defaultValue(for: (String).self)
         }
         
         set { }
@@ -286,20 +203,16 @@ class MockHomeViewController: HomeViewController, Cuckoo.Mock {
     
 
     
-     override func viewDidLoad()  {
-        return DefaultValueRegistry.defaultValue(for: Void.self)
+     override func fetchHomeCategories(for section: Section)  -> Observable<[Criteria]> {
+        return DefaultValueRegistry.defaultValue(for: Observable<[Criteria]>.self)
     }
     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
-        return DefaultValueRegistry.defaultValue(for: Void.self)
+     override func fetchMovies(for category: Criteria, page: Int)  -> Observable<[Movie]> {
+        return DefaultValueRegistry.defaultValue(for: Observable<[Movie]>.self)
     }
     
-     override func display(categories: [MainCategory])  {
-        return DefaultValueRegistry.defaultValue(for: Void.self)
-    }
-    
-     override func display(section: MainSection)  {
-        return DefaultValueRegistry.defaultValue(for: Void.self)
+     override func fetchShows(for category: Criteria, page: Int)  -> Observable<[TVShow]> {
+        return DefaultValueRegistry.defaultValue(for: Observable<[TVShow]>.self)
     }
     
 }

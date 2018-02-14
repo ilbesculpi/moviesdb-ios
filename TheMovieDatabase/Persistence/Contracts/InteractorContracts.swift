@@ -15,16 +15,16 @@ protocol MovieInteractorContract {
     /**
      * Fetch a list of categories to display on the Home Screen.
      */
-    func fetchHomeCategories(for section: Section) -> Observable<[Category]>;
+    func fetchHomeCategories(for section: Section) -> Observable<[Criteria]>;
     
     /**
      * Fetch a list of movies by category.
      */
-    func fetchMovies(for category: Category, page: Int) -> Observable<[Movie]>;
+    func fetchMovies(for category: Criteria, page: Int) -> Observable<[Movie]>;
     
     /**
      * Fetch a list of shows by category.
      */
-    func fetchShows(for category: Category, page: Int) -> Observable<[TVShow]>;
+    func fetchShows(for category: Criteria, page: Int) -> Observable<[TVShow]>;
     
 }

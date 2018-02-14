@@ -29,7 +29,7 @@ class MovieListConfigurator: NSObject {
         return presenter;
     }
 
-    class func configure(_ view: MovieListViewController, category: Category) {
+    class func configure(_ view: MovieListViewController, category: Criteria) {
         let presenter = configurePresenter(view: view);
         presenter.category = category;
         view.presenter = presenter;
