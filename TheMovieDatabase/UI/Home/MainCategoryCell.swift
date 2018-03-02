@@ -21,7 +21,7 @@ class MainCategoryCell: UITableViewCell {
         self.selectedBackgroundView = selectionView;
     }
     
-    func display(_ category: MainCategory) {
+    func display(_ category: Criteria) {
         iconView.image = category.icon;
         labelTitle.text = category.title;
     }

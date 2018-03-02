@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  TheMovieDatabase
+
+  Created by Ilbert Esculpi on 2/11/18.
+  Copyright © 2018 Ilbert Esculpi. All rights reserved.
+*/
+
+"Moves" = "Movies";
+"TV Shows" = "TV Shows";
+"Popular" = "Popular";
+"TopRated" = "Top Rated";
+"Upcoming" = "Upcoming";

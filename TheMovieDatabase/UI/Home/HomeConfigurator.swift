@@ -10,7 +10,7 @@ import Foundation
 
 class HomeConfigurator {
     
-    class func configure(_ view: HomeViewController, section: MainSection) {
+    class func configure(_ view: HomeViewController, section: Section) {
         let presenter = HomePresenter();
         presenter.view = view;
         presenter.section = section;

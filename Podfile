@@ -12,7 +12,8 @@ target 'TheMovieDatabase' do
   pod 'RxAlamofire',    '~> 4.0'
   pod 'AlamofireImage', '~> 3.3'
   pod 'ObjectMapper',   '~> 3.1'
-
+  pod 'AwesomeCache',   :git => 'https://github.com/SergeyPetrachkov/AwesomeCache.git', :branch => 'swift4'
+  
   target 'TheMovieDatabaseTests' do
     inherit! :search_paths
     # Pods for testing

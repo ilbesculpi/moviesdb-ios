@@ -14,6 +14,7 @@ import ObjectMapper
 
 class RemoteStore: RemoteStoreContract {
     
+    var cache: CacheContract!
     var apiKey: String = "7f8661a70a2785177ff438102e23a9aa";
     var baseUrl: String = "https://api.themoviedb.org/3";
 
@@ -25,17 +26,38 @@ class RemoteStore: RemoteStoreContract {
     // MARK: - Movies
     
     func fetchMovies(_ endPointUrl: String) -> Observable<[Movie]> {
-        print("Fetching \(endPointUrl) ...");
-        return RxAlamofire.requestJSON(.get, endPointUrl)
-            .map({ (response, json) -> [Movie] in
-                if let dict = json as? [String : AnyObject] {
-                    if let results = dict["results"] as? [[String: AnyObject]] {
-                        let moviesArray = Mapper<Movie>().mapArray(JSONArray: results);
-                        return moviesArray;
+        
+        // check if there is a cached response
+        if let cached = cache.read(endPointUrl) {
+            print("Fetching \(endPointUrl) from cache");
+            return Observable.just(cached)
+                .map({ (json) in
+                    if let dict = json as? [String : AnyObject] {
+                        if let results = dict["results"] as? [[String: AnyObject]] {
+                            let moviesArray = Mapper<Movie>().mapArray(JSONArray: results);
+                            return moviesArray;
+                        }
                     }
-                }
-                return [];
-            });
+                    return [];
+                });
+        }
+        else {
+            // fetch from network
+            print("Fetching \(endPointUrl) ...");
+            return RxAlamofire.requestJSON(.get, endPointUrl)
+                .map({ (response, json) -> [Movie] in
+                    if let dict = json as? [String : AnyObject] {
+                        if let results = dict["results"] as? [[String: AnyObject]] {
+                            // save response to cache
+                            self.cache.write(endPointUrl, value: dict as NSDictionary, expires: 5 * 60);
+                            let moviesArray = Mapper<Movie>().mapArray(JSONArray: results);
+                            return moviesArray;
+                        }
+                    }
+                    return [];
+                });
+        }
+        
     }
     
     /**

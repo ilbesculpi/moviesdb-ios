@@ -18,12 +18,12 @@ class HomeViewController: BaseViewController, HomeViewContract {
     var router: HomeRouter?
     
     // List of categories to display
-    var categories: [MainCategory] = [];
+    var categories: [Criteria] = [];
     
     // tableView reference
     @IBOutlet weak var tableView: UITableView!
     
-    var section: MainSection {
+    var section: Section {
         get {
             return presenter?.section ?? .movies;
         }
@@ -35,16 +35,21 @@ class HomeViewController: BaseViewController, HomeViewContract {
         tableView.tableFooterView = UIView();
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+        presenter?.onResume();
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         router?.prepare(for: segue);
     }
     
-    func display(categories: [MainCategory]) {
+    func display(categories: [Criteria]) {
         self.categories = categories;
         self.tableView.reloadData();
     }
     
-    func display(section: MainSection) {
+    func display(section: Section) {
         self.title = section.title;
     }
     
@@ -72,7 +77,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let cell: MainCategoryCell = tableView.dequeueReusableCell(withIdentifier: "MainCategoryCell") as! MainCategoryCell;
         
         // configure cell
-        let category: MainCategory = categories[indexPath.row];
+        let category: Criteria = categories[indexPath.row];
         cell.display(category);
         
         return cell;

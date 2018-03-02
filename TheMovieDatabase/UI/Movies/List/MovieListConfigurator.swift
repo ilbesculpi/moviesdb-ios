@@ -9,16 +9,29 @@
 import UIKit
 
 class MovieListConfigurator: NSObject {
-
-    class func configure(_ view: MovieListViewController, category: MainCategory) {
-        
-        let presenter = MovieListPresenter();
+    
+    class func configureRemoteStore() -> RemoteStore {
+        let store: RemoteStore = RemoteStore();
+        store.cache = CacheStore();
+        return store;
+    }
+    
+    class func configureInteractor() -> MovieInteractor {
         let interactor = MovieInteractor();
-        interactor.remoteStore = RemoteStore();
-        presenter.interactor = interactor;
+        interactor.remoteStore = configureRemoteStore();
+        return interactor;
+    }
+    
+    class func configurePresenter(view: MovieListViewController) -> MovieListPresenter {
+        let presenter = MovieListPresenter();
+        presenter.interactor = configureInteractor();
         presenter.view = view;
+        return presenter;
+    }
+
+    class func configure(_ view: MovieListViewController, category: Criteria) {
+        let presenter = configurePresenter(view: view);
         presenter.category = category;
-        
         view.presenter = presenter;
     }
     

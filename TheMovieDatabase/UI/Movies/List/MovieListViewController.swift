@@ -23,7 +23,12 @@ class MovieListViewController: BaseViewController, MovieListViewContract {
         presenter?.viewDidLoad();
     }
     
-    func display(category: MainCategory) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+        presenter?.onResume();
+    }
+    
+    func display(category: Criteria) {
         self.title = "\(category.title) Movies";
     }
     

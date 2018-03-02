@@ -1,7 +1,7 @@
-// MARK: - Mocks generated from file: TheMovieDatabase/UI/MovieList/MovieListPresenter.swift at 2018-02-08 04:41:42 +0000
+// MARK: - Mocks generated from file: TheMovieDatabase/UI/Home/HomePresenter.swift at 2018-02-13 02:12:13 +0000
 
 //
-//  MovieListPresenter.swift
+//  HomePresenter.swift
 //  TheMovieDatabase
 //
 //  Created by Ilbert Esculpi on 2/7/18.
@@ -11,39 +11,127 @@
 import Cuckoo
 @testable import TheMovieDatabase
 
+import RxCocoa
+import RxSwift
 import UIKit
 
-class MockMovieListPresenter: MovieListPresenter, Cuckoo.Mock {
-    typealias MocksType = MovieListPresenter
-    typealias Stubbing = __StubbingProxy_MovieListPresenter
-    typealias Verification = __VerificationProxy_MovieListPresenter
+class MockHomePresenter: HomePresenter, Cuckoo.Mock {
+    typealias MocksType = HomePresenter
+    typealias Stubbing = __StubbingProxy_HomePresenter
+    typealias Verification = __VerificationProxy_HomePresenter
     let cuckoo_manager = Cuckoo.MockManager()
 
-    private var observed: MovieListPresenter?
+    private var observed: HomePresenter?
 
-    func spy(on victim: MovieListPresenter) -> Self {
+    func spy(on victim: HomePresenter) -> Self {
         observed = victim
         return self
     }
 
     
-
+    // ["name": "view", "accesibility": "", "@type": "InstanceVariable", "type": "HomeViewContract!", "isReadOnly": false]
+     override var view: HomeViewContract! {
+        get {
+            return cuckoo_manager.getter("view", original: observed.map { o in return { () -> HomeViewContract! in o.view }})
+        }
+        
+        set {
+            cuckoo_manager.setter("view", value: newValue, original: observed != nil ? { self.observed?.view = $0 } : nil)
+        }
+        
+    }
+    
+    // ["name": "section", "accesibility": "", "@type": "InstanceVariable", "type": "Section!", "isReadOnly": false]
+     override var section: Section! {
+        get {
+            return cuckoo_manager.getter("section", original: observed.map { o in return { () -> Section! in o.section }})
+        }
+        
+        set {
+            cuckoo_manager.setter("section", value: newValue, original: observed != nil ? { self.observed?.section = $0 } : nil)
+        }
+        
+    }
+    
+    // ["name": "interactor", "accesibility": "", "@type": "InstanceVariable", "type": "MovieInteractorContract!", "isReadOnly": false]
+     override var interactor: MovieInteractorContract! {
+        get {
+            return cuckoo_manager.getter("interactor", original: observed.map { o in return { () -> MovieInteractorContract! in o.interactor }})
+        }
+        
+        set {
+            cuckoo_manager.setter("interactor", value: newValue, original: observed != nil ? { self.observed?.interactor = $0 } : nil)
+        }
+        
+    }
     
 
     
 
-    struct __StubbingProxy_MovieListPresenter: Cuckoo.StubbingProxy {
+    
+    // ["name": "viewDidLoad", "returnSignature": "", "fullyQualifiedName": "viewDidLoad()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.StubNoReturnFunction"]
+     override func viewDidLoad()  {
+        
+            return cuckoo_manager.call("viewDidLoad()",
+                parameters: (),
+                original: observed.map { o in
+                    return { (args) in
+                        let () = args
+                         o.viewDidLoad()
+                    }
+                })
+        
+    }
+    
+    // ["name": "onResume", "returnSignature": "", "fullyQualifiedName": "onResume()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.StubNoReturnFunction"]
+     override func onResume()  {
+        
+            return cuckoo_manager.call("onResume()",
+                parameters: (),
+                original: observed.map { o in
+                    return { (args) in
+                        let () = args
+                         o.onResume()
+                    }
+                })
+        
+    }
+    
+
+    struct __StubbingProxy_HomePresenter: Cuckoo.StubbingProxy {
         private let cuckoo_manager: Cuckoo.MockManager
 
         init(manager: Cuckoo.MockManager) {
             self.cuckoo_manager = manager
         }
         
+        var view: Cuckoo.ToBeStubbedProperty<HomeViewContract?> {
+            return .init(manager: cuckoo_manager, name: "view")
+        }
+        
+        var section: Cuckoo.ToBeStubbedProperty<Section?> {
+            return .init(manager: cuckoo_manager, name: "section")
+        }
+        
+        var interactor: Cuckoo.ToBeStubbedProperty<MovieInteractorContract?> {
+            return .init(manager: cuckoo_manager, name: "interactor")
+        }
+        
+        
+        func viewDidLoad() -> Cuckoo.StubNoReturnFunction<()> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return .init(stub: cuckoo_manager.createStub("viewDidLoad()", parameterMatchers: matchers))
+        }
+        
+        func onResume() -> Cuckoo.StubNoReturnFunction<()> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return .init(stub: cuckoo_manager.createStub("onResume()", parameterMatchers: matchers))
+        }
         
     }
 
 
-    struct __VerificationProxy_MovieListPresenter: Cuckoo.VerificationProxy {
+    struct __VerificationProxy_HomePresenter: Cuckoo.VerificationProxy {
         private let cuckoo_manager: Cuckoo.MockManager
         private let callMatcher: Cuckoo.CallMatcher
         private let sourceLocation: Cuckoo.SourceLocation
@@ -55,18 +143,77 @@ class MockMovieListPresenter: MovieListPresenter, Cuckoo.Mock {
         }
 
         
+        var view: Cuckoo.VerifyProperty<HomeViewContract?> {
+            return .init(manager: cuckoo_manager, name: "view", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        }
+        
+        var section: Cuckoo.VerifyProperty<Section?> {
+            return .init(manager: cuckoo_manager, name: "section", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        }
+        
+        var interactor: Cuckoo.VerifyProperty<MovieInteractorContract?> {
+            return .init(manager: cuckoo_manager, name: "interactor", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        }
+        
 
+        
+        @discardableResult
+        func viewDidLoad() -> Cuckoo.__DoNotUse<Void> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return cuckoo_manager.verify("viewDidLoad()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        @discardableResult
+        func onResume() -> Cuckoo.__DoNotUse<Void> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return cuckoo_manager.verify("onResume()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
         
     }
 
 
 }
 
- class MovieListPresenterStub: MovieListPresenter {
+ class HomePresenterStub: HomePresenter {
+    
+     override var view: HomeViewContract! {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (HomeViewContract!).self)
+        }
+        
+        set { }
+        
+    }
+    
+     override var section: Section! {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (Section!).self)
+        }
+        
+        set { }
+        
+    }
+    
+     override var interactor: MovieInteractorContract! {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (MovieInteractorContract!).self)
+        }
+        
+        set { }
+        
+    }
     
 
     
 
+    
+     override func viewDidLoad()  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     override func onResume()  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
     
 }
 

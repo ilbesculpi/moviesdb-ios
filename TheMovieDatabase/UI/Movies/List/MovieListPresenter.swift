@@ -15,12 +15,16 @@ class MovieListPresenter: BasePresenter, MovieListPresenterContract {
     weak var view: MovieListViewContract!
     var interactor: MovieInteractorContract!
     var page: Int = 1;
-    var category: MainCategory!
+    var category: Criteria!
     var disposeBag: DisposeBag = DisposeBag();
     
     override func viewDidLoad() {
         super.viewDidLoad();
         view.display(category: category);
+    }
+    
+    override func onResume() {
+        super.onResume();
         fetchMovies();
     }
     

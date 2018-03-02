@@ -32,9 +32,9 @@ class MovieInteractorTests: XCTestCase {
         
         let fetchExpectation = expectation(description: "fetch categories list expectation");
         
-        let expectedCategories: [MainCategory] = [.popular, .topRated, .upcoming];
+        let expectedCategories: [TheMovieDatabase.Criteria] = [.popular, .topRated, .upcoming];
         
-        interactor.fetchHomeCategories()
+        interactor.fetchHomeCategories(for: .movies)
             .subscribe(onNext: { (categories) in
                 XCTAssertNotNil(categories, "category list should not be nil");
                 XCTAssertEqual(expectedCategories, categories, "category list is not equal to expected");
