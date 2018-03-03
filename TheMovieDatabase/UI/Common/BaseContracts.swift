@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol BaseViewContract: AnyObject {
     
@@ -23,4 +24,10 @@ protocol BasePresenterContract: AnyObject {
     func viewDidLoad();
     func onResume();
     
+}
+
+protocol BaseRouterContract: AnyObject {
+	
+	func prepare(for segue: UIStoryboardSegue);
+	
 }

@@ -11,23 +11,35 @@ import RxCocoa
 import RxSwift
 
 class HomeViewController: BaseViewController, HomeViewContract {
-    
-    // Home Presenter
+	
+	// MARK: - Properties
+	
     var presenter: HomePresenterContract?
     
-    var router: HomeRouter?
+    var router: HomeRouterContract?
     
     // List of categories to display
     var categories: [Criteria] = [];
-    
+	
+	// Indicates which section is displaying: Movies or TV Shows
+	var section: Section {
+		get {
+			return presenter?.section ?? .movies;
+		}
+	};
+	
+	// MARK: - IBOutlet
+	
     // tableView reference
     @IBOutlet weak var tableView: UITableView!
     
-    var section: Section {
-        get {
-            return presenter?.section ?? .movies;
-        }
-    };
+	
+	// MARK: - BaseViewController
+	
+	deinit {
+		presenter = nil;
+		router = nil;
+	}
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -43,6 +55,8 @@ class HomeViewController: BaseViewController, HomeViewContract {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         router?.prepare(for: segue);
     }
+	
+	// MARK: - HomeViewContract
     
     func display(categories: [Criteria]) {
         self.categories = categories;
@@ -51,12 +65,7 @@ class HomeViewController: BaseViewController, HomeViewContract {
     
     func display(section: Section) {
         self.title = section.title;
-    }
-    
-    deinit {
-        presenter = nil;
-        router = nil;
-    }
+	}
 
 }
 

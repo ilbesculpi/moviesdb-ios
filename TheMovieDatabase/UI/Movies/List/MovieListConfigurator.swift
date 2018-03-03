@@ -28,11 +28,18 @@ class MovieListConfigurator: NSObject {
         presenter.view = view;
         return presenter;
     }
+	
+	class func configureRouter(view: MovieListViewController) -> MovieListRouter {
+		let router = MovieListRouter();
+		router.view = view;
+		return router;
+	}
 
     class func configure(_ view: MovieListViewController, category: Criteria) {
         let presenter = configurePresenter(view: view);
         presenter.category = category;
         view.presenter = presenter;
+		view.router = configureRouter(view: view);
     }
     
 }

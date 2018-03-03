@@ -11,8 +11,9 @@ import UIKit
 
 protocol MovieListViewContract: BaseViewContract {
     
-    var presenter: MovieListPresenterContract? { get set };
-    
+    var presenter: MovieListPresenterContract? { get set }
+	var router: MovieListRouterContract? { get set }
+	
     func display(category: Criteria);
     func display(movies: [Movie]);
     
@@ -21,7 +22,14 @@ protocol MovieListViewContract: BaseViewContract {
 protocol MovieListPresenterContract: BasePresenterContract {
     
     weak var view: MovieListViewContract! { get set }
+	
     var page: Int { get set }
     var category: Criteria! { get set }
     
+}
+
+protocol MovieListRouterContract: BaseRouterContract {
+	
+	func navigateToMovieDetail(movie: Movie);
+	
 }

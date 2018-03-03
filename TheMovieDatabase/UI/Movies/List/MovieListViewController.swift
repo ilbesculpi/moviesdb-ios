@@ -11,11 +11,21 @@ import RxCocoa
 import RxSwift
 
 class MovieListViewController: BaseViewController, MovieListViewContract {
-    
+	
+	// MARK: - Properties
     var presenter: MovieListPresenterContract?
+	var router: MovieListRouterContract?
     var movies: [Movie] = [];
-    
+	
+	// MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
+	
+	
+	// MARK: - BaseViewController
+	deinit {
+		presenter = nil;
+		router = nil;
+	}
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -27,7 +37,13 @@ class MovieListViewController: BaseViewController, MovieListViewContract {
         super.viewDidAppear(animated);
         presenter?.onResume();
     }
-    
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		router?.prepare(for: segue);
+	}
+	
+	// MARK: - MovieListViewContract
+	
     func display(category: Criteria) {
 		self.title = NSLocalizedString("\(category.rawValue) Movies", comment: "");
     }
@@ -59,6 +75,8 @@ extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false);
+		let movie: Movie = movies[indexPath.row];
+		router?.navigateToMovieDetail(movie: movie);
     }
     
 }

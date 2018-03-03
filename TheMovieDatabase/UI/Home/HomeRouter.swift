@@ -8,23 +8,23 @@
 
 import UIKit
 
-class HomeRouter: NSObject {
+class HomeRouter: BaseRouter, HomeRouterContract {
     
-    weak var view: HomeViewController?
+    weak var view: HomeViewController!
     var section: Section?
     private var category: Criteria?
 
     func navigateToMovieList(category: Criteria) {
         self.category = category;
-        view?.performSegue(withIdentifier: "sw_movie_list", sender: nil);
+        view.performSegue(withIdentifier: "sw_movie_list", sender: nil);
     }
     
     func navigateToShowList(category: Criteria) {
         self.category = category;
-        view?.performSegue(withIdentifier: "sw_tv_show_list", sender: nil);
+        view.performSegue(withIdentifier: "sw_tv_show_list", sender: nil);
     }
     
-    func prepare(for segue: UIStoryboardSegue) {
+    override func prepare(for segue: UIStoryboardSegue) {
         if( segue.identifier == "sw_movie_list" ) {
             // configure movie list controller
             let movieListController = segue.destination as! MovieListViewController;

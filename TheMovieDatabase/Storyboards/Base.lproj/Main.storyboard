@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -121,26 +122,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="107.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="asz-ll-PxW">
-                                                    <rect key="frame" x="8" y="8" width="76" height="91.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="I" translatesAutoresizingMaskIntoConstraints="NO" id="asz-ll-PxW">
+                                                    <rect key="frame" x="8" y="8" width="64.5" height="96.5"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" secondItem="asz-ll-PxW" secondAttribute="height" multiplier="6:9" id="Zef-3m-kgZ"/>
                                                         <constraint firstAttribute="width" constant="76" id="hTT-cR-lmM"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Df-8G-ndh">
-                                                    <rect key="frame" x="92" y="8" width="220" height="19.5"/>
+                                                    <rect key="frame" x="80.5" y="8" width="231.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOt-ph-bWE">
-                                                    <rect key="frame" x="92" y="31.5" width="220" height="13.5"/>
+                                                    <rect key="frame" x="80.5" y="31.5" width="231.5" height="13.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="740" text="Lorem ipsum dolor set amore. Ala del hummus donce totalitarium non cesc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vb-43-dPM">
-                                                    <rect key="frame" x="92" y="49" width="220" height="50"/>
+                                                    <rect key="frame" x="80.5" y="49" width="231.5" height="55.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -187,7 +189,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="kM8-Uy-KDd" id="g0h-9D-TSv"/>
-                        <segue destination="7uN-gw-nXV" kind="show" id="MNy-UB-ySC"/>
+                        <segue destination="7uN-gw-nXV" kind="show" identifier="sw_movie_detail" id="MNy-UB-ySC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aur-yV-Vic" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -288,17 +290,64 @@
         <!--Movie-->
         <scene sceneID="9eo-QI-sll">
             <objects>
-                <viewController title="Movie" id="7uN-gw-nXV" sceneMemberID="viewController">
+                <viewController title="Movie" id="7uN-gw-nXV" customClass="MovieDetailViewController" customModule="TheMovieDatabase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z3e-KI-bJt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3e-kD-g6f">
+                                <rect key="frame" x="50" y="115.5" width="220" height="151"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Klu-oo-y0a">
+                                        <rect key="frame" x="8" y="8" width="90" height="135"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Klu-oo-y0a" secondAttribute="height" multiplier="6:9" id="Rsx-fe-GkC"/>
+                                            <constraint firstAttribute="width" constant="90" id="YjF-D1-LTN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="xJ4-Ay-PHe">
+                                        <rect key="frame" x="122" y="8" width="90" height="135"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xJ4-Ay-PHe" secondAttribute="height" multiplier="6:9" id="Nlb-Bx-XWF"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Klu-oo-y0a" firstAttribute="width" secondItem="xJ4-Ay-PHe" secondAttribute="width" id="5Ca-p4-olL"/>
+                                    <constraint firstAttribute="trailing" secondItem="xJ4-Ay-PHe" secondAttribute="trailing" constant="8" id="BYB-HE-7py"/>
+                                    <constraint firstItem="xJ4-Ay-PHe" firstAttribute="leading" secondItem="Klu-oo-y0a" secondAttribute="trailing" constant="24" id="Plv-jq-Vgr"/>
+                                    <constraint firstItem="Klu-oo-y0a" firstAttribute="leading" secondItem="d3e-kD-g6f" secondAttribute="leading" constant="8" id="cnK-wE-7nb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Klu-oo-y0a" secondAttribute="bottom" constant="8" id="dGh-iB-APB"/>
+                                    <constraint firstItem="xJ4-Ay-PHe" firstAttribute="centerY" secondItem="Klu-oo-y0a" secondAttribute="centerY" id="gef-iV-xtV"/>
+                                    <constraint firstItem="Klu-oo-y0a" firstAttribute="top" secondItem="d3e-kD-g6f" secondAttribute="top" constant="8" id="rsO-Vz-hSA"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgG-vA-54i">
+                                <rect key="frame" x="120" y="80" width="81" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d3e-kD-g6f" firstAttribute="top" secondItem="tgG-vA-54i" secondAttribute="bottom" constant="16" id="1Ah-6O-p1Y"/>
+                            <constraint firstItem="tgG-vA-54i" firstAttribute="top" secondItem="j3S-0q-yLl" secondAttribute="top" constant="16" id="GhO-S2-ZQz"/>
+                            <constraint firstItem="tgG-vA-54i" firstAttribute="centerX" secondItem="Z3e-KI-bJt" secondAttribute="centerX" id="m00-qV-XCy"/>
+                            <constraint firstItem="d3e-kD-g6f" firstAttribute="centerX" secondItem="Z3e-KI-bJt" secondAttribute="centerX" id="qxR-wo-w9z"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="j3S-0q-yLl"/>
                     </view>
+                    <connections>
+                        <outlet property="imageBackdrop" destination="xJ4-Ay-PHe" id="K5O-g7-8ib"/>
+                        <outlet property="imagePoster" destination="Klu-oo-y0a" id="fUi-Sw-frP"/>
+                        <outlet property="labelTitle" destination="tgG-vA-54i" id="5KZ-Vn-mnn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EV1-OM-ecY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3578" y="-220"/>
+            <point key="canvasLocation" x="3577.5" y="-220.77464788732394"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="F6C-AS-ODh">
@@ -438,7 +487,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="I" width="16" height="16"/>
         <image name="MoviesTabIcon" width="30" height="30"/>
+        <image name="Placeholder" width="91" height="137"/>
         <image name="PopularIcon" width="50" height="50"/>
         <image name="TvShowsTabIcon" width="30" height="30"/>
     </resources>
