@@ -6,8 +6,17 @@
   Copyright © 2018 Ilbert Esculpi. All rights reserved.
 */
 
-"Moves" = "Películas";
+"Movies" = "Películas";
 "TV Shows" = "Series";
 "Popular" = "Populares";
 "TopRated" = "Mejor Puntuadas";
 "Upcoming" = "Próximas";
+
+/* Movies */
+"Popular Movies" = "Películas Populares";
+"TopRated Movies" = "Películas Mejor Puntuadas";
+"Upcoming Movies" = "Próximas Películas";
+
+/* TV Shows */
+"Popular TVShows" = "Series Populares";
+"TopRated TVShows" = "Series Mejor Puntuadas";

@@ -328,9 +328,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52O-AP-eKx" userLabel="Overlay">
+                            <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52O-AP-eKx" userLabel="Overlay">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEV-oM-Rzr">
@@ -375,8 +374,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="52O-AP-eKx" firstAttribute="bottom" secondItem="IVY-ZF-UOB" secondAttribute="bottom" id="Ksu-Ik-Ezb"/>
                             <constraint firstItem="qEV-oM-Rzr" firstAttribute="centerX" secondItem="BbS-rh-GVk" secondAttribute="centerX" id="MaP-o9-pnk"/>
                             <constraint firstItem="qEV-oM-Rzr" firstAttribute="centerY" secondItem="BbS-rh-GVk" secondAttribute="centerY" id="UbN-ai-hvj"/>
+                            <constraint firstItem="52O-AP-eKx" firstAttribute="top" secondItem="BbS-rh-GVk" secondAttribute="top" id="VJs-X0-2Tm"/>
+                            <constraint firstItem="52O-AP-eKx" firstAttribute="trailing" secondItem="IVY-ZF-UOB" secondAttribute="trailing" id="Wyq-0h-qod"/>
+                            <constraint firstItem="52O-AP-eKx" firstAttribute="leading" secondItem="IVY-ZF-UOB" secondAttribute="leading" id="iQl-sB-Ego"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IVY-ZF-UOB"/>
                     </view>
@@ -440,6 +443,6 @@
         <image name="TvShowsTabIcon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hcK-ew-8OR"/>
+        <segue reference="pWc-kQ-Lmz"/>
     </inferredMetricsTieBreakers>
 </document>

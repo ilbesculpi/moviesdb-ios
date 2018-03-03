@@ -29,7 +29,7 @@ class MovieListViewController: BaseViewController, MovieListViewContract {
     }
     
     func display(category: Criteria) {
-        self.title = "\(category.title) Movies";
+		self.title = NSLocalizedString("\(category.rawValue) Movies", comment: "");
     }
     
     func display(movies: [Movie]) {

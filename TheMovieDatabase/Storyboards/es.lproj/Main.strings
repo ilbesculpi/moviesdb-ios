@@ -3,40 +3,40 @@
 "3Df-8G-ndh.text" = "Movie Title";
 
 /* Class = "UIViewController"; title = "Loading"; ObjectID = "3Ur-qg-ggt"; */
-"3Ur-qg-ggt.title" = "Loading";
+"3Ur-qg-ggt.title" = "Cargando";
 
 /* Class = "UIViewController"; title = "Movie"; ObjectID = "7uN-gw-nXV"; */
-"7uN-gw-nXV.title" = "Movie";
+"7uN-gw-nXV.title" = "Película";
 
 /* Class = "UILabel"; text = "Lorem ipsum dolor set amore. Ala del hummus donce totalitarium non cesc"; ObjectID = "8vb-43-dPM"; */
 "8vb-43-dPM.text" = "Lorem ipsum dolor set amore. Ala del hummus donce totalitarium non cesc";
 
 /* Class = "UITabBarItem"; title = "Movies"; ObjectID = "HVQ-NK-alj"; */
-"HVQ-NK-alj.title" = "Movies";
+"HVQ-NK-alj.title" = "Películas";
 
 /* Class = "UITabBarItem"; title = "TV Shows"; ObjectID = "IU0-7s-a2s"; */
-"IU0-7s-a2s.title" = "TV Shows";
+"IU0-7s-a2s.title" = "Series";
 
 /* Class = "UILabel"; text = "TV Show"; ObjectID = "KsX-vq-FTZ"; */
-"KsX-vq-FTZ.text" = "TV Show";
+"KsX-vq-FTZ.text" = "Serie";
 
 /* Class = "UINavigationItem"; title = "Movies"; ObjectID = "PgU-RB-QYi"; */
-"PgU-RB-QYi.title" = "Movies";
+"PgU-RB-QYi.title" = "Películas";
 
 /* Class = "UIViewController"; title = "Movies"; ObjectID = "VLG-0D-Yws"; */
-"VLG-0D-Yws.title" = "Movies";
+"VLG-0D-Yws.title" = "Películas";
 
 /* Class = "UIViewController"; title = "Category"; ObjectID = "Wez-vb-zRN"; */
-"Wez-vb-zRN.title" = "Category";
+"Wez-vb-zRN.title" = "Categoría";
 
 /* Class = "UILabel"; text = "Loading..."; ObjectID = "XIz-Cj-L1j"; */
-"XIz-Cj-L1j.text" = "Loading...";
+"XIz-Cj-L1j.text" = "Cargando...";
 
 /* Class = "UILabel"; text = "Lorem ipsum dolor set amore. Ala del hummus donce totalitarium non cesc"; ObjectID = "aGy-uA-5xa"; */
 "aGy-uA-5xa.text" = "Lorem ipsum dolor set amore. Ala del hummus donce totalitarium non cesc";
 
 /* Class = "UILabel"; text = "Genre"; ObjectID = "hOt-ph-bWE"; */
-"hOt-ph-bWE.text" = "Genre";
+"hOt-ph-bWE.text" = "Género";
 
 /* Class = "UINavigationController"; title = "TVShowsNav"; ObjectID = "hm3-at-U3h"; */
 "hm3-at-U3h.title" = "TVShowsNav";
@@ -45,7 +45,7 @@
 "npr-TK-bs7.title" = "MoviesNav";
 
 /* Class = "UILabel"; text = "Category"; ObjectID = "tgr-Fa-Xjf"; */
-"tgr-Fa-Xjf.text" = "Category";
+"tgr-Fa-Xjf.text" = "Categoría";
 
 /* Class = "UILabel"; text = "Genre"; ObjectID = "urf-Ts-gh4"; */
-"urf-Ts-gh4.text" = "Genre";
+"urf-Ts-gh4.text" = "Género";

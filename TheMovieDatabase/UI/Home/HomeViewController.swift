@@ -31,8 +31,8 @@ class HomeViewController: BaseViewController, HomeViewContract {
     
     override func viewDidLoad() {
         super.viewDidLoad();
-        presenter?.viewDidLoad();
         tableView.tableFooterView = UIView();
+		presenter?.viewDidLoad();
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -22,7 +22,7 @@ class TVShowListViewController: BaseViewController, TVShowListViewContract {
     }
     
     func display(category: Criteria) {
-        self.title = "\(category.title) TV Shows";
+		self.title = NSLocalizedString("\(category.rawValue) TVShows", comment: "");
     }
     
     func display(shows: [TVShow]) {

@@ -11,7 +11,7 @@ import Foundation
 enum Section: String {
     
     case movies = "Movies";
-    case tvShows = "TVShows";
+    case tvShows = "TV Shows";
     
     var title: String {
         get {
